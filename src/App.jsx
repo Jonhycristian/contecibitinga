@@ -85,8 +85,9 @@ export default function App() {
       <section className="relative min-h-[100svh] flex items-center justify-center bg-slate-950 overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" 
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=70" 
             alt="Business architecture" 
+            fetchPriority="high"
             className="w-full h-full object-cover opacity-40 scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/60 to-slate-950" />
@@ -219,7 +220,7 @@ export default function App() {
               >
                 <div className="relative">
                   <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" alt="Equipe Contec" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=70" alt="Equipe Contec" loading="lazy" className="w-full h-full object-cover" />
                   </div>
                   <div className="absolute -bottom-8 -right-8 glass-card border border-white/20 text-white p-8 rounded-3xl hidden md:block backdrop-blur-xl">
                     <div className="text-cyan-400 mb-2"><Star size={32} fill="currentColor" /></div>
@@ -380,7 +381,7 @@ export default function App() {
       {/* 8. CTA FINAL */}
       <section className="relative py-32 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1541888086925-0c13bb104746?auto=format&fit=crop&q=80" alt="Empreendimento" className="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
+          <img src="https://images.unsplash.com/photo-1541888086925-0c13bb104746?auto=format&fit=crop&w=1920&q=70" alt="Empreendimento" loading="lazy" className="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent" />
         </div>
         <div className="relative z-20 max-w-4xl mx-auto">
