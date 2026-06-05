@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Building2, Calculator, Users, FileText, Map, 
-  Landmark, CheckCircle2, ChevronRight, MessageCircle, 
+  CheckCircle2, ChevronRight, MessageCircle, 
   MapPin, Clock, ShieldCheck, ArrowRight, Menu, X, Star
 } from 'lucide-react';
 
