@@ -6,6 +6,8 @@ import {
   CheckCircle2, ChevronRight, 
   MapPin, Clock, ShieldCheck, ArrowRight, Menu, X, Star
 } from 'lucide-react';
+import logo1 from './assets/logo.png';
+import logo2 from './assets/logo02.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -36,11 +38,9 @@ export default function App() {
       {/* NAVBAR */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/90 backdrop-blur-md py-4 shadow-lg border-b border-white/5' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20">
-              <Building2 className="text-white" size={24} />
-            </div>
-            <span className="text-2xl font-bold text-white tracking-tight">CONTEC</span>
+          <div className="flex items-center gap-4">
+            <img src={logo1} alt="CONTEC Logo" className="h-10 w-auto object-contain" />
+            <img src={logo2} alt="CONTEC Logo 2" className="h-10 w-auto object-contain" />
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -403,14 +403,9 @@ export default function App() {
             
             {/* Logo & Info */}
             <div className="lg:col-span-1">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center">
-                  <Building2 className="text-white" size={18} />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-white tracking-tight leading-none">CONTEC</span>
-                  <span className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Serviços e Consultoria</span>
-                </div>
+              <div className="flex items-center gap-4 mb-6">
+                <img src={logo1} alt="CONTEC Logo" className="h-12 w-auto object-contain" />
+                <img src={logo2} alt="CONTEC Logo 2" className="h-12 w-auto object-contain" />
               </div>
               <p className="text-sm leading-relaxed mb-8">
                 Consultoria estratégica e inteligência contábil para negócios que buscam crescimento sólido e regularidade impecável.
