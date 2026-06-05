@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaWhatsapp } from 'react-icons/fa';
 import { 
   Building2, Calculator, Users, FileText, Map, 
-  CheckCircle2, ChevronRight, MessageCircle, 
+  CheckCircle2, ChevronRight, 
   MapPin, Clock, ShieldCheck, ArrowRight, Menu, X, Star
 } from 'lucide-react';
 
@@ -390,7 +391,7 @@ export default function App() {
             Agende uma reunião estratégica sem compromisso e descubra como podemos otimizar seus resultados.
           </p>
           <a href="#whatsapp" className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all hover:shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] hover:-translate-y-1">
-            <MessageCircle size={24} /> Iniciar Conversa no WhatsApp
+            <FaWhatsapp size={24} /> Iniciar Conversa no WhatsApp
           </a>
         </div>
       </section>
@@ -433,7 +434,7 @@ export default function App() {
                   <span>Av. Empresarial, 1000 - Sala 402<br/>Edifício Corporate, SP</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <MessageCircle className="text-cyan-500 flex-shrink-0" size={18} />
+                  <FaWhatsapp className="text-cyan-500 flex-shrink-0" size={18} />
                   <a href="#" className="hover:text-white transition-colors">(11) 99999-9999</a>
                 </li>
                 <li className="flex items-center gap-3">
@@ -471,7 +472,7 @@ export default function App() {
         href="#" 
         className="fixed bottom-8 right-8 bg-gradient-to-r from-emerald-500 to-green-600 text-white p-4 rounded-full shadow-[0_10px_30px_-10px_rgba(16,185,129,0.8)] hover:scale-110 hover:-translate-y-1 transition-all z-50 flex items-center justify-center border border-green-400/50"
       >
-        <MessageCircle size={28} />
+        <FaWhatsapp size={28} />
       </a>
 
     </div>
