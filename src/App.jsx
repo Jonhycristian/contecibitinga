@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 import { 
-  Building2, Calculator, Users, FileText, Map, 
+  Building2, Calculator, Users, FileText, Map, Landmark,
   CheckCircle2, ChevronRight, 
   MapPin, Clock, ShieldCheck, ArrowRight, Menu, X, Star
 } from 'lucide-react';
@@ -124,7 +124,7 @@ export default function App() {
             initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto"
           >
-            <a href="#whatsapp" className="group relative bg-white text-slate-950 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:scale-105">
+            <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="group relative bg-white text-slate-950 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-10 transition-opacity" />
               <span>Agendar Consultoria</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -185,12 +185,12 @@ export default function App() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {[
-              { title: 'Escrituração Fiscal', icon: <FileText size={28} />, desc: 'Gestão tributária estratégica para redução de custos e compliance total.' },
-              { title: 'Gestão Contábil', icon: <Calculator size={28} />, desc: 'Dashboards financeiros, balanços precisos e relatórios para tomada de decisão.' },
-              { title: 'Departamento Pessoal', icon: <Users size={28} />, desc: 'Administração de folha de pagamento e gestão completa de rotinas trabalhistas.' },
-              { title: 'Legalização Empresarial', icon: <ShieldCheck size={28} />, desc: 'Abertura, alterações contratuais e obtenção de alvarás com agilidade.' },
-              { title: 'Loteamentos & Áreas', icon: <Map size={28} />, desc: 'Expertise em regularização, aprovação e desmembramento de áreas.' },
-              { title: 'Construção & Incorporação', icon: <Building2 size={28} />, desc: 'Contabilidade especializada para obras, SPEs e patrimônio de afetação.' },
+              { title: 'Escrituração Fiscal e Contábil', icon: <Calculator size={28} />, desc: 'Gestão tributária e contábil estratégica, garantindo compliance e redução de custos.' },
+              { title: 'Departamento Pessoal', icon: <Users size={28} />, desc: 'Administração completa de folha de pagamento e rotinas trabalhistas.' },
+              { title: 'Legalização de Empresas', icon: <ShieldCheck size={28} />, desc: 'Abertura, alterações, encerramentos e regularizações em geral.' },
+              { title: 'Loteamentos e Desmembramentos', icon: <Map size={28} />, desc: 'Especialistas em documentação imobiliária e processos de parcelamento de solo.' },
+              { title: 'Construção Civil e Incorporação', icon: <Building2 size={28} />, desc: 'Assessoria completa e contabilidade especializada para o setor de obras e incorporações.' },
+              { title: 'Geric junto à CEF', icon: <Landmark size={28} />, desc: 'Elaboração e acompanhamento de processos para aprovação de crédito (Geric) na Caixa Econômica Federal.' },
             ].map((service, idx) => (
               <motion.div key={idx} variants={fadeUp} className="bg-white border border-slate-200 p-8 rounded-3xl hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 group">
                 <div className="w-14 h-14 bg-slate-50 border border-slate-100 text-slate-700 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-50 group-hover:text-cyan-600 group-hover:border-cyan-100 transition-colors">
@@ -390,7 +390,7 @@ export default function App() {
           <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto font-light">
             Agende uma reunião estratégica sem compromisso e descubra como podemos otimizar seus resultados.
           </p>
-          <a href="#whatsapp" className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all hover:shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] hover:-translate-y-1">
+          <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all hover:shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)] hover:-translate-y-1">
             <FaWhatsapp size={24} /> Iniciar Conversa no WhatsApp
           </a>
         </div>
@@ -407,7 +407,10 @@ export default function App() {
                 <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center">
                   <Building2 className="text-white" size={18} />
                 </div>
-                <span className="text-2xl font-bold text-white tracking-tight">CONTEC</span>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-white tracking-tight leading-none">CONTEC</span>
+                  <span className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Serviços e Consultoria</span>
+                </div>
               </div>
               <p className="text-sm leading-relaxed mb-8">
                 Consultoria estratégica e inteligência contábil para negócios que buscam crescimento sólido e regularidade impecável.
@@ -435,7 +438,7 @@ export default function App() {
                 </li>
                 <li className="flex items-center gap-3">
                   <FaWhatsapp className="text-cyan-500 flex-shrink-0" size={18} />
-                  <a href="#" className="hover:text-white transition-colors">(11) 99999-9999</a>
+                  <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">(16) 99718-1970</a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Clock className="text-cyan-500 flex-shrink-0" size={18} />
@@ -447,18 +450,17 @@ export default function App() {
             {/* Redes Sociais */}
             <div>
               <h4 className="text-white font-bold mb-6 tracking-wide">Redes Sociais</h4>
+              <p className="text-sm text-slate-500 mb-4">Em breve estaremos nas principais redes sociais. Por enquanto, fale conosco pelo WhatsApp!</p>
               <div className="flex space-x-3">
-                {['LinkedIn', 'Instagram', 'Facebook'].map(social => (
-                  <a key={social} href="#" className="h-10 px-4 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-cyan-500 hover:text-white hover:border-cyan-500 transition-all text-sm font-medium">
-                    {social}
+                  <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="h-10 px-4 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-green-500 hover:text-white hover:border-green-500 transition-all text-sm font-medium gap-2">
+                    <FaWhatsapp size={16} /> WhatsApp
                   </a>
-                ))}
               </div>
             </div>
           </div>
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
-            <p>&copy; {new Date().getFullYear()} CONTEC Contabilidade. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} CONTEC SERVIÇOS E CONSULTORIA CONTABIL LTDA. Todos os direitos reservados.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
               <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
@@ -469,7 +471,8 @@ export default function App() {
 
       {/* BOTÃO FLUTUANTE WHATSAPP */}
       <a 
-        href="#" 
+        href="https://wa.me/5516997181970" 
+        target="_blank" rel="noreferrer"
         className="fixed bottom-8 right-8 bg-gradient-to-r from-emerald-500 to-green-600 text-white p-4 rounded-full shadow-[0_10px_30px_-10px_rgba(16,185,129,0.8)] hover:scale-110 hover:-translate-y-1 transition-all z-50 flex items-center justify-center border border-green-400/50"
       >
         <FaWhatsapp size={28} />
