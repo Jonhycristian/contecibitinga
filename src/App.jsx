@@ -512,10 +512,10 @@ export default function App() {
       </section>
 
       {/* 8. CTA FINAL */}
-      <section className="relative py-32 bg-blue-900 flex items-center justify-center text-center px-6 overflow-hidden">
+      <section className="relative py-32 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/90 to-blue-800/80" />
+          <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-60 scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/70 to-slate-900/80" />
         </div>
         <div className="relative z-20 max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
           <span className="inline-block py-1.5 px-4 rounded-full bg-blue-500/20 text-blue-200 text-sm font-bold uppercase tracking-widest mb-6">Fale com Especialistas</span>
