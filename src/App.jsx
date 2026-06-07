@@ -275,14 +275,14 @@ export default function App() {
       {/* 3. SERVIÇOS DETALHADOS SECTION */}
       <section id="servicos" className="py-32 bg-slate-50/50 relative">
         <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
-            <div className="max-w-3xl">
+          <div className="flex flex-col lg:flex-row justify-between items-center text-center lg:items-end lg:text-left mb-20 gap-8">
+            <div className="max-w-3xl flex flex-col items-center lg:items-start">
               <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm flex items-center gap-3">
-                <span className="w-8 h-0.5 bg-blue-600 rounded-full"></span> O Que Entregamos
+                <span className="w-10 h-1 bg-blue-600 rounded-full hidden lg:block"></span> O Que Entregamos
               </h2>
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">Expertise que impulsiona <br className="hidden md:block" /><span className="text-blue-600">resultados</span></h3>
-              <p className="text-lg text-slate-600 font-light leading-relaxed max-w-2xl">Vamos muito além do básico. Entregamos soluções sob medida para blindar o seu patrimônio e garantir a máxima eficiência tributária.</p>
             </div>
+            <p className="text-lg text-slate-600 font-light leading-relaxed max-w-md text-center lg:text-left">Vamos muito além do básico. Entregamos soluções sob medida para blindar o seu patrimônio e garantir a máxima eficiência tributária.</p>
             <div className="flex-shrink-0 pb-2 hidden md:block">
                <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-800 px-8 py-4 rounded-full font-bold transition-all hover:bg-slate-50 hover:shadow-lg hover:shadow-slate-200/50">
                   Agendar Diagnóstico <ArrowRight size={18} className="text-blue-600" />
@@ -433,7 +433,7 @@ export default function App() {
             
             <motion.div 
               initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-              className="lg:w-1/2 w-full"
+              className="lg:w-1/2 w-full text-center lg:text-left flex flex-col items-center lg:items-start"
             >
               <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">Quem Somos</h2>
               <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">Uma parceria construída na confiança e precisão.</h3>
@@ -470,11 +470,11 @@ export default function App() {
             
             {/* Esquerda: Textos Fixos */}
             <div className="lg:w-1/3">
-              <div className="sticky top-32">
+              <div className="sticky top-32 flex flex-col items-center text-center lg:items-start lg:text-left">
                 <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">Tire suas dúvidas</h2>
                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Perguntas Frequentes</h3>
                 <p className="text-lg text-slate-600 font-light mb-8">Respostas diretas e transparentes para as dúvidas mais comuns sobre os nossos serviços. Sua dúvida não está aqui?</p>
-                <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-slate-50 text-slate-800 border border-slate-200 px-6 py-4 rounded-full font-bold transition-all hover:bg-slate-100 hover:border-slate-300">
+                <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 bg-slate-50 text-slate-800 border border-slate-200 px-6 py-4 rounded-full font-bold transition-all hover:bg-slate-100 hover:border-slate-300">
                   <FaWhatsapp className="text-blue-600" size={20} /> Fale com um Consultor
                 </a>
               </div>
