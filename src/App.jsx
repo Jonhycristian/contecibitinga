@@ -38,9 +38,9 @@ export default function App() {
       {/* NAVBAR */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm border-b border-slate-200' : 'bg-white py-4 shadow-sm'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <img src={logo1} alt="CONTEC Logo" className="h-10 md:h-12 w-auto object-contain" />
-            <img src={logo2} alt="CONTEC Logo 2" className="h-10 md:h-12 w-auto object-contain" />
+          <div className="flex items-center gap-2 md:gap-4">
+            <img src={logo1} alt="CONTEC Logo" className="h-6 md:h-10 w-auto object-contain" />
+            <img src={logo2} alt="CONTEC Logo 2" className="h-6 md:h-10 w-auto object-contain" />
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -229,18 +229,24 @@ export default function App() {
       <section className="relative py-32 bg-blue-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1541888086925-0c13bb104746?auto=format&fit=crop&w=1920&q=70" alt="Empreendimento" loading="lazy" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-900/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/90 to-blue-800/80" />
         </div>
-        <div className="relative z-20 max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
-            Pronto para elevar a gestão do seu negócio?
+        <div className="relative z-20 max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
+          <span className="inline-block py-1.5 px-4 rounded-full bg-blue-500/20 text-blue-200 text-sm font-bold uppercase tracking-widest mb-6">Fale com Especialistas</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+            Transforme a contabilidade em <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Vantagem Competitiva</span>
           </h2>
-          <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto font-light">
-            Agende uma reunião estratégica sem compromisso e descubra como podemos otimizar seus resultados.
+          <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+            Pare de perder tempo com burocracias. Deixe a nossa equipe cuidar da conformidade e da saúde financeira do seu negócio enquanto você foca exclusivamente no que importa: crescer.
           </p>
-          <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-xl font-bold text-lg transition-all hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:-translate-y-1">
-            <FaWhatsapp size={24} /> Iniciar Conversa no WhatsApp
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 bg-white text-blue-700 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-slate-50 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.4)] hover:-translate-y-1">
+              <FaWhatsapp size={24} /> Falar com Consultor
+            </a>
+            <a href="#servicos" className="inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-white/10">
+              Conhecer Serviços
+            </a>
+          </div>
         </div>
       </section>
 
@@ -251,9 +257,9 @@ export default function App() {
             
             {/* Logo & Info */}
             <div className="lg:col-span-1">
-              <div className="flex flex-wrap items-center gap-4 mb-6 bg-white/5 p-4 rounded-xl">
-                <img src={logo1} alt="CONTEC Logo" className="h-10 w-auto object-contain brightness-0 invert" />
-                <img src={logo2} alt="CONTEC Logo 2" className="h-10 w-auto object-contain brightness-0 invert" />
+              <div className="flex flex-wrap items-center gap-3 mb-6 bg-white/5 p-4 rounded-xl">
+                <img src={logo1} alt="CONTEC Logo" className="h-7 md:h-10 w-auto object-contain brightness-0 invert" />
+                <img src={logo2} alt="CONTEC Logo 2" className="h-7 md:h-10 w-auto object-contain brightness-0 invert" />
               </div>
               <p className="text-sm leading-relaxed mb-8 text-slate-400">
                 Consultoria estratégica e inteligência contábil para negócios que buscam crescimento sólido e regularidade impecável.
