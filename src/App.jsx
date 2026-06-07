@@ -187,52 +187,55 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* 1. HERO & STATS SECTION */}
-      <section className="relative min-h-[100svh] flex flex-col bg-slate-50 overflow-hidden pt-24 pb-6 md:pt-32 md:pb-16">
+      {/* 2. HERO SECTION */}
+      <section className="relative pt-32 pb-32 md:pt-48 md:pb-56 bg-slate-50 overflow-hidden flex flex-col justify-center">
+        {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
-          <picture>
-            <source media="(max-width: 767px)" srcSet={hero02Image} />
-            <img 
-              src={heroImage} 
-              alt="Contec Consulting" 
-              fetchPriority="high"
-              className="w-full h-full object-cover opacity-80 scale-105"
-            />
-          </picture>
-          <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]" />
+          <img 
+            src={heroImage} 
+            alt="Construção Civil e Loteamentos" 
+            className="w-full h-full object-cover opacity-80 mix-blend-luminosity scale-105"
+          />
+          {/* Gradiente complexo para legibilidade */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent w-full md:w-2/3" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-slate-50/80 md:via-transparent to-slate-50/30" />
         </div>
         
-        {/* MAIN HERO CONTENT */}
-        <div className="container relative z-10 mx-auto px-4 md:px-6 text-center max-w-5xl flex-1 flex flex-col justify-center mb-6 lg:mb-16">
+        {/* Overlay decorativo de tecnologia/finanças */}
+        <div className="absolute inset-0 z-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-600 via-transparent to-transparent"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
-            initial="hidden" animate="visible" variants={staggerContainer}
-            className="flex flex-col items-center"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl flex flex-col items-center text-center md:items-start md:text-left mx-auto md:mx-0"
           >
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs md:text-sm font-semibold mb-4 md:mb-8">
-              <span className="relative flex h-2 w-2">
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm mb-6 shadow-sm">
+              <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
               </span>
               Excelência e Tradição Contábil
             </motion.div>
 
-            <motion.h1 variants={fadeUp} className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-3 md:mb-6">
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
               Estruture o futuro do seu negócio com <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">segurança.</span>
             </motion.h1>
             
-            <motion.p variants={fadeUp} className="text-sm sm:text-base md:text-xl text-slate-700 mb-6 md:mb-10 max-w-3xl leading-relaxed font-light px-2">
+            <motion.p variants={fadeUp} className="text-lg sm:text-xl text-slate-700 mb-10 max-w-3xl leading-relaxed font-light">
               Soluções contábeis, fiscais e documentais premium para construção civil, incorporações, loteamentos e empresas de todos os portes.
             </motion.p>
             
             <motion.div 
               variants={fadeUp}
-              className="flex flex-col sm:flex-row gap-4 mb-16 justify-center w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-0 justify-center md:justify-start w-full sm:w-auto"
             >
-              <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="group relative bg-blue-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:bg-blue-700 shadow-lg shadow-blue-600/20">
+              <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="group relative bg-blue-600 text-white px-8 py-4 rounded-full font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:bg-blue-700 shadow-lg shadow-blue-600/20">
                 <span className="relative z-10 flex items-center gap-2">Agendar Consultoria <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></span>
                 <div className="absolute inset-0 h-full w-0 bg-white/20 transition-all duration-300 ease-out group-hover:w-full z-0"></div>
               </a>
-              <a href="#servicos" className="px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-slate-700 bg-white/90 border border-slate-200 hover:bg-white transition-colors flex items-center justify-center">
+              <a href="#servicos" className="px-8 py-4 rounded-full font-bold text-slate-700 bg-white/90 border border-slate-200 hover:bg-white transition-colors flex items-center justify-center">
                 Explorar Serviços
               </a>
             </motion.div>
