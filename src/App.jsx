@@ -159,7 +159,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* 1. HERO & STATS SECTION */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center bg-slate-50 overflow-hidden pt-24 pb-8 md:pt-32 md:pb-16">
+      <section className="relative min-h-[100svh] flex flex-col bg-slate-50 overflow-hidden pt-28 pb-12 md:justify-center md:pt-32 md:pb-16">
         <div className="absolute inset-0 z-0">
           <picture>
             <source media="(max-width: 767px)" srcSet={hero02Image} />
