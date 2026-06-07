@@ -267,12 +267,21 @@ export default function App() {
       </section>
 
       {/* 3. SERVIÇOS DETALHADOS SECTION */}
-      <section id="servicos" className="py-32 bg-white relative">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">O Que Entregamos</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Expertise que impulsiona resultados</h3>
-            <p className="text-lg text-slate-600 font-light">Vamos muito além do básico. Entregamos soluções sob medida para blindar o seu patrimônio e garantir a máxima eficiência tributária.</p>
+      <section id="servicos" className="py-32 bg-slate-50/50 relative">
+        <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
+            <div className="max-w-3xl">
+              <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm flex items-center gap-3">
+                <span className="w-8 h-0.5 bg-blue-600 rounded-full"></span> O Que Entregamos
+              </h2>
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">Expertise que impulsiona <br className="hidden md:block" /><span className="text-blue-600">resultados</span></h3>
+              <p className="text-lg text-slate-600 font-light leading-relaxed max-w-2xl">Vamos muito além do básico. Entregamos soluções sob medida para blindar o seu patrimônio e garantir a máxima eficiência tributária.</p>
+            </div>
+            <div className="flex-shrink-0 pb-2 hidden md:block">
+               <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-800 px-8 py-4 rounded-full font-bold transition-all hover:bg-slate-50 hover:shadow-lg hover:shadow-slate-200/50">
+                  Agendar Diagnóstico <ArrowRight size={18} className="text-blue-600" />
+                </a>
+            </div>
           </div>
 
           <motion.div 
