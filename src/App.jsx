@@ -610,13 +610,15 @@ export default function App() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm font-light">
-            <p>CONTEC SERVIÇOS E CONSULTORIA CONTÁBIL LTDA</p>
-            <p>Todos os direitos reservados &copy; 2026</p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-              <span>&bull;</span>
-              <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+          <div className="border-t border-white/10 pt-10 flex flex-col items-center justify-center gap-5 text-center text-sm text-slate-500 font-light">
+            <div>
+              <p className="text-slate-400 font-bold tracking-widest uppercase mb-2">CONTEC SERVIÇOS E CONSULTORIA CONTÁBIL LTDA</p>
+              <p className="text-xs">Todos os direitos reservados &copy; {new Date().getFullYear()}</p>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-widest">
+              <a href="#" className="hover:text-blue-400 transition-colors">Política de Privacidade</a>
+              <span className="text-white/20">•</span>
+              <a href="#" className="hover:text-blue-400 transition-colors">Termos de Uso</a>
             </div>
           </div>
         </div>
