@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import logo1 from './assets/logo.png';
 import logo2 from './assets/logo02.png';
+import heroImage from './assets/hero.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -159,12 +160,12 @@ export default function App() {
       <section className="relative min-h-[100svh] flex flex-col justify-center bg-slate-50 overflow-hidden pt-32 pb-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=70" 
-            alt="Business architecture" 
+            src={heroImage} 
+            alt="Contec Consulting" 
             fetchPriority="high"
-            className="w-full h-full object-cover opacity-[0.04] scale-105"
+            className="w-full h-full object-cover opacity-20 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-slate-50/80 to-white" />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-slate-50/90 to-white" />
         </div>
         
         {/* MAIN HERO CONTENT */}
