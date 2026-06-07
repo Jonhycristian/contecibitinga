@@ -438,12 +438,12 @@ export default function App() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-slate-500 font-light">
-            <div className="text-center lg:text-left">
-              <p className="text-slate-400 font-medium tracking-wide">CONTEC SERVIÇOS E CONSULTORIA CONTÁBIL LTDA</p>
-              <p className="mt-1 text-xs">Todos os direitos reservados &copy; {new Date().getFullYear()}</p>
+          <div className="border-t border-white/10 pt-10 flex flex-col items-center justify-center gap-5 text-center text-sm text-slate-500 font-light">
+            <div>
+              <p className="text-slate-400 font-bold tracking-widest uppercase mb-2">CONTEC SERVIÇOS E CONSULTORIA CONTÁBIL LTDA</p>
+              <p className="text-xs">Todos os direitos reservados &copy; {new Date().getFullYear()}</p>
             </div>
-            <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-widest">
               <a href="#" className="hover:text-blue-400 transition-colors">Política de Privacidade</a>
               <span className="text-white/20">•</span>
               <a href="#" className="hover:text-blue-400 transition-colors">Termos de Uso</a>
