@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 import { 
   Building2, Calculator, Users, FileText, Map, Landmark,
@@ -38,6 +38,26 @@ const FAQItem = ({ question, answer }) => {
         )}
       </AnimatePresence>
     </div>
+  );
+};
+
+const AnimatedCounter = ({ value, suffix }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, value, { duration: 2.5, ease: "easeOut" });
+      return controls.stop;
+    }
+  }, [isInView, value, count]);
+
+  return (
+    <span ref={ref}>
+      <motion.span>{rounded}</motion.span>{suffix}
+    </span>
   );
 };
 
@@ -192,10 +212,10 @@ export default function App() {
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
           >
             {[
-              { number: '15+', label: 'Anos de Experiência' },
-              { number: '500+', label: 'Clientes Satisfeitos' },
-              { number: '100%', label: 'Conformidade Fiscal' },
-              { number: '24/7', label: 'Suporte Estratégico' }
+              { number: 15, suffix: '+', label: 'Anos de Experiência' },
+              { number: 500, suffix: '+', label: 'Clientes Satisfeitos' },
+              { number: 100, suffix: '%', label: 'Conformidade Fiscal' },
+              { number: null, text: '24/7', label: 'Suporte Estratégico' }
             ].map((stat, idx) => (
               <motion.div 
                 key={idx} 
@@ -205,7 +225,9 @@ export default function App() {
                 }}
                 className="bg-white rounded-3xl p-8 shadow-xl shadow-blue-900/5 border border-slate-100 flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300"
               >
-                <h3 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-cyan-400 mb-3 drop-shadow-sm">{stat.number}</h3>
+                <h3 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-cyan-400 mb-3 drop-shadow-sm">
+                  {stat.number !== null ? <AnimatedCounter value={stat.number} suffix={stat.suffix} /> : stat.text}
+                </h3>
                 <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
               </motion.div>
             ))}
