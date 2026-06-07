@@ -247,7 +247,7 @@ export default function App() {
         </div>
 
         {/* INTEGRATED STATS */}
-        <div className="container relative z-10 mx-auto px-4 md:px-6 mt-20 md:mt-32 lg:mt-40">
+        <div className="container relative z-10 mx-auto px-4 md:px-6 mt-8 md:mt-12">
           <motion.div 
             initial="hidden" animate="visible" variants={staggerContainer}
             className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6"
