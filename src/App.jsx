@@ -114,8 +114,8 @@ export default function App() {
   return (
     <div className="font-sans text-slate-800 bg-slate-50 overflow-x-hidden selection:bg-blue-500 selection:text-white">
       
-      {/* NAVBAR */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm border-b border-slate-200' : 'bg-white py-4 shadow-sm'}`}>
+      {/* HEADER NAVBAR */}
+      <nav className="absolute top-0 w-full z-50 bg-transparent py-5">
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 md:gap-4">
             <img src={logo1} alt="CONTEC Logo" className="h-6 md:h-10 w-auto object-contain" />
