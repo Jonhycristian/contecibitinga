@@ -9,6 +9,8 @@ import {
 import logo1 from './assets/logo.png';
 import logo2 from './assets/logo02.png';
 import heroImage from './assets/hero.png';
+import hero02Image from './assets/hero02.png';
+import heroMetodoImage from './assets/hero-metodo.jpeg';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -159,12 +161,15 @@ export default function App() {
       {/* 1. HERO & STATS SECTION */}
       <section className="relative min-h-[100svh] flex flex-col justify-center bg-slate-50 overflow-hidden pt-24 pb-8 md:pt-32 md:pb-16">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Contec Consulting" 
-            fetchPriority="high"
-            className="w-full h-full object-cover opacity-80 scale-105"
-          />
+          <picture>
+            <source media="(max-width: 767px)" srcSet={hero02Image} />
+            <img 
+              src={heroImage} 
+              alt="Contec Consulting" 
+              fetchPriority="high"
+              className="w-full h-full object-cover opacity-80 scale-105"
+            />
+          </picture>
           <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]" />
         </div>
         
@@ -272,9 +277,17 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. NOSSO MÉTODO DE TRABALHO */}
+      {/* 4. NOSSO MÉTODO SECTION (TIMELINE) */}
       <section id="metodo" className="py-32 bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 via-slate-900 to-slate-900 z-0"></div>
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroMetodoImage} 
+            alt="Metodologia" 
+            loading="lazy"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-900/95" />
+        </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-blue-400 font-bold tracking-widest uppercase mb-4 text-sm">Nosso Método</h2>
