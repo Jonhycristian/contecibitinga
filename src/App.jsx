@@ -25,18 +25,21 @@ const staggerContainer = {
   }
 };
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
-    <div className="border border-slate-200 rounded-2xl mb-4 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
-      <button onClick={() => setIsOpen(!isOpen)} className="w-full flex justify-between items-center p-6 md:p-8 text-left hover:bg-slate-50 transition-colors focus:outline-none">
-        <span className="font-bold text-slate-900 text-lg md:text-xl pr-8">{question}</span>
-        {isOpen ? <ChevronUp className="text-blue-600 flex-shrink-0" size={24} /> : <ChevronDown className="text-slate-400 flex-shrink-0" size={24} />}
+    <div className={`mb-4 rounded-2xl overflow-hidden transition-all duration-300 border ${isOpen ? 'bg-white border-blue-200 shadow-xl shadow-blue-900/5' : 'bg-white/50 border-slate-200 hover:border-blue-300 hover:bg-white'}`}>
+      <button onClick={onClick} className="w-full flex justify-between items-center p-6 md:p-8 text-left focus:outline-none">
+        <span className={`font-bold text-lg md:text-xl pr-8 transition-colors ${isOpen ? 'text-blue-700' : 'text-slate-800'}`}>{question}</span>
+        <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>
+          <ChevronDown className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} size={20} />
+        </div>
       </button>
       <AnimatePresence>
         {isOpen && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="px-6 md:px-8 pb-6 md:pb-8 text-slate-600 leading-relaxed font-light text-lg">
-            {answer}
+            <div className="pt-2 border-t border-slate-100">
+              {answer}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -66,6 +69,15 @@ const AnimatedCounter = ({ value, suffix }) => {
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeFaq, setActiveFaq] = useState(0);
+
+  const faqs = [
+    { q: "Vocês atendem apenas construtoras e loteadoras?", a: "Não. Embora sejamos altamente especializados no setor imobiliário e de construção civil, nossa equipe possui expertise para atender empresas prestadoras de serviços, comércios e indústrias de diversos portes." },
+    { q: "O que é o Geric da Caixa e como vocês ajudam?", a: "O Geric é a análise de Risco de Crédito da Caixa Econômica Federal, essencial para construtoras conseguirem financiamento. Nós adequamos seus balanços e preparamos toda a documentação exigida para que sua empresa alcance a nota necessária para aprovação." },
+    { q: "Minha empresa está em outra cidade, posso ser cliente CONTEC?", a: "Sim. Atendemos de forma 100% digital e segura, garantindo a mesma proximidade e eficiência do atendimento presencial através de reuniões online e plataformas seguras de troca de documentos." },
+    { q: "Como funciona a troca de contador para a CONTEC?", a: "O processo é 100% transparente e sem burocracia para você. Nossa equipe cuida de toda a transição, comunicando o contador anterior e transferindo os dados de forma segura, garantindo que sua empresa não sofra nenhuma interrupção." },
+    { q: "Vocês realizam planejamento tributário preventivo?", a: "Absolutamente. Não somos apenas 'geradores de guias'. Analisamos continuamente o faturamento e as margens da sua empresa para garantir que você esteja sempre enquadrado no regime tributário mais econômico e seguro permitido por lei." }
+  ];
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -372,19 +384,16 @@ export default function App() {
             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Perguntas Frequentes</h3>
             <p className="text-lg text-slate-600 font-light">Respostas claras para as dúvidas mais comuns sobre nossos serviços de contabilidade e consultoria.</p>
           </div>
-          <div>
-            <FAQItem 
-              question="Vocês atendem apenas construtoras e loteadoras?"
-              answer="Não. Embora sejamos altamente especializados no setor imobiliário e de construção civil, nossa equipe possui expertise para atender empresas prestadoras de serviços, comércios e indústrias de diversos portes."
-            />
-            <FAQItem 
-              question="O que é o Geric da Caixa e como vocês ajudam?"
-              answer="O Geric é a análise de Risco de Crédito da Caixa Econômica Federal, essencial para construtoras conseguirem financiamento. Nós adequamos seus balanços e preparamos toda a documentação exigida para que sua empresa alcance a nota necessária para aprovação."
-            />
-            <FAQItem 
-              question="Minha empresa está em outra cidade, posso ser cliente CONTEC?"
-              answer="Sim. Atendemos de forma 100% digital e segura, garantindo a mesma proximidade e eficiência do atendimento presencial através de reuniões online e plataformas seguras de troca de documentos."
-            />
+          <div className="max-w-3xl mx-auto">
+            {faqs.map((faq, idx) => (
+              <FAQItem 
+                key={idx}
+                question={faq.q}
+                answer={faq.a}
+                isOpen={activeFaq === idx}
+                onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+              />
+            ))}
           </div>
         </div>
       </section>
