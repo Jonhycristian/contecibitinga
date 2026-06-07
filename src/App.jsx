@@ -484,43 +484,79 @@ export default function App() {
 
       {/* 6. DEPOIMENTOS */}
       <section className="py-24 bg-slate-50 relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">O que dizem sobre nós</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Confiança Comprovada</h3>
             <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto">Nossa maior conquista é a tranquilidade e o crescimento sólido dos nossos clientes.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative">
-              <div className="text-blue-400 mb-4 text-5xl font-serif leading-none opacity-50">"</div>
-              <p className="text-slate-600 mb-6 font-light leading-relaxed">A CONTEC não é apenas uma contabilidade, é uma parceira estratégica. A consultoria deles no processo do Geric da Caixa foi fundamental para a aprovação do nosso financiamento de obra em tempo recorde.</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 font-bold text-lg"><Building2 size={20}/></div>
+            
+            {/* Depoimento 1 */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col h-full relative group hover:-translate-y-2 transition-transform duration-500">
+              <div className="text-blue-500/10 absolute top-8 right-8 text-8xl font-serif leading-none">"</div>
+              <div className="flex gap-1 text-amber-400 mb-6 relative z-10">
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+              </div>
+              <p className="text-slate-700 mb-8 font-medium leading-relaxed flex-grow relative z-10">"A CONTEC não é apenas uma contabilidade, é uma parceira estratégica. A consultoria deles no processo do Geric da Caixa foi fundamental para a aprovação do nosso financiamento de obra em tempo recorde."</p>
+              
+              <div className="flex items-center gap-4 pt-6 border-t border-slate-100 relative z-10 mt-auto">
+                <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                  <Building2 size={24}/>
+                </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">Construtora Ávila</h4>
-                  <p className="text-sm text-slate-500">Engenharia e Incorporações</p>
+                  <h4 className="font-bold text-slate-900 tracking-wide">Construtora Ávila</h4>
+                  <p className="text-blue-600 font-bold uppercase tracking-widest text-[10px] mt-1">Engenharia e Incorporações</p>
                 </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative">
-              <div className="text-blue-400 mb-4 text-5xl font-serif leading-none opacity-50">"</div>
-              <p className="text-slate-600 mb-6 font-light leading-relaxed">Estávamos pagando impostos a mais por enquadramento errado. A auditoria tributária da equipe reestruturou toda a nossa carga fiscal, gerando uma economia imediata impressionante. Serviço premium.</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 font-bold text-lg"><Users size={20}/></div>
+
+            {/* Depoimento 2 */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col h-full relative group hover:-translate-y-2 transition-transform duration-500">
+              <div className="text-blue-500/10 absolute top-8 right-8 text-8xl font-serif leading-none">"</div>
+              <div className="flex gap-1 text-amber-400 mb-6 relative z-10">
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+              </div>
+              <p className="text-slate-700 mb-8 font-medium leading-relaxed flex-grow relative z-10">"Estávamos pagando impostos a mais por enquadramento errado. A auditoria tributária da equipe reestruturou toda a nossa carga fiscal, gerando uma economia imediata impressionante. Serviço premium."</p>
+              
+              <div className="flex items-center gap-4 pt-6 border-t border-slate-100 relative z-10 mt-auto">
+                <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                  <Users size={24}/>
+                </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">Grupo Silva Loteamentos</h4>
-                  <p className="text-sm text-slate-500">Desenvolvimento Urbano</p>
+                  <h4 className="font-bold text-slate-900 tracking-wide">Grupo Silva</h4>
+                  <p className="text-blue-600 font-bold uppercase tracking-widest text-[10px] mt-1">Desenvolvimento Urbano</p>
                 </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative">
-              <div className="text-blue-400 mb-4 text-5xl font-serif leading-none opacity-50">"</div>
-              <p className="text-slate-600 mb-6 font-light leading-relaxed">Transferir minha contabilidade para a CONTEC foi a melhor decisão do ano. Processo transparente, atendimento 100% digital via WhatsApp muito rápido, e sempre têm a resposta certa na ponta da língua.</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 font-bold text-lg"><Map size={20}/></div>
+
+            {/* Depoimento 3 */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col h-full relative group hover:-translate-y-2 transition-transform duration-500">
+              <div className="text-blue-500/10 absolute top-8 right-8 text-8xl font-serif leading-none">"</div>
+              <div className="flex gap-1 text-amber-400 mb-6 relative z-10">
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+              </div>
+              <p className="text-slate-700 mb-8 font-medium leading-relaxed flex-grow relative z-10">"Transferir minha contabilidade para a CONTEC foi a melhor decisão do ano. Processo transparente, atendimento 100% digital via WhatsApp muito rápido, e sempre têm a resposta certa na ponta da língua."</p>
+              
+              <div className="flex items-center gap-4 pt-6 border-t border-slate-100 relative z-10 mt-auto">
+                <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                  <Map size={24}/>
+                </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">Rodrigues Imobiliária</h4>
-                  <p className="text-sm text-slate-500">Vendas e Locação</p>
+                  <h4 className="font-bold text-slate-900 tracking-wide">Rodrigues Imobiliária</h4>
+                  <p className="text-blue-600 font-bold uppercase tracking-widest text-[10px] mt-1">Vendas e Locação</p>
                 </div>
               </div>
             </motion.div>
@@ -531,8 +567,8 @@ export default function App() {
       {/* 8. CTA FINAL */}
       <section className="relative py-32 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-60 scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/70 to-slate-900/80" />
+          <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-90 scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/20 to-slate-900/40" />
         </div>
         <div className="relative z-20 max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
           <span className="inline-block py-1.5 px-4 rounded-full bg-blue-500/20 text-blue-200 text-sm font-bold uppercase tracking-widest mb-6">Fale com Especialistas</span>
