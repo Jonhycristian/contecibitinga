@@ -136,7 +136,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[100svh] flex items-center justify-center bg-slate-50 overflow-hidden pt-20">
+      <section className="relative min-h-[100svh] flex flex-col justify-center bg-slate-50 overflow-hidden pt-32 pb-32 md:pb-48">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=70" 
