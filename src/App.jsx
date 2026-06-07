@@ -537,18 +537,43 @@ export default function App() {
       </section>
 
       {/* MAPA INTERATIVO */}
-      <section className="bg-white">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118437.19702657805!2d-48.918987349999996!3d-21.75168015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8ac3e6eab5d3d%3A0x63cd2e3d550e588!2sIbitinga%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1717726589308!5m2!1spt-BR!2sbr" 
-          width="100%" 
-          height="400" 
-          style={{ border: 0 }} 
-          allowFullScreen="" 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Localização CONTEC Ibitinga"
-          className="grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-        ></iframe>
+      <section className="py-24 bg-white relative">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            
+            {/* Info */}
+            <div className="lg:w-1/3 text-center lg:text-left">
+              <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">Nossa Sede</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Venha tomar um café com a nossa equipe</h3>
+              <p className="text-lg text-slate-600 font-light mb-8">Estamos sediados no interior de São Paulo, com uma estrutura preparada para receber você, mas com tecnologia para atender empresas de norte a sul do Brasil.</p>
+              
+              <div className="flex items-start justify-center lg:justify-start gap-4 mb-6 text-left">
+                <div className="bg-blue-50 p-3 rounded-xl text-blue-600 flex-shrink-0"><MapPin size={24} /></div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-lg">Sede Ibitinga</h4>
+                  <p className="text-slate-600 mt-1">Capital Nacional do Bordado<br/>São Paulo, Brasil</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Mapa */}
+            <div className="lg:w-2/3 w-full">
+              <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118437.19702657805!2d-48.918987349999996!3d-21.75168015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8ac3e6eab5d3d%3A0x63cd2e3d550e588!2sIbitinga%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1717726589308!5m2!1spt-BR!2sbr" 
+                  width="100%" 
+                  height="450" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização CONTEC Ibitinga"
+                ></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </section>
 
       {/* FOOTER */}
