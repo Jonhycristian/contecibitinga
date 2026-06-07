@@ -438,11 +438,15 @@ export default function App() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500 font-light">
-            <p>&copy; {new Date().getFullYear()} CONTEC SERVIÇOS E CONSULTORIA CONTABIL LTDA. Todos os direitos reservados.</p>
-            <div className="flex gap-8 mt-6 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-              <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+          <div className="border-t border-white/10 pt-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-slate-500 font-light">
+            <div className="text-center lg:text-left">
+              <p className="text-slate-400 font-medium tracking-wide">CONTEC SERVIÇOS E CONSULTORIA CONTÁBIL LTDA</p>
+              <p className="mt-1 text-xs">Todos os direitos reservados &copy; {new Date().getFullYear()}</p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest">
+              <a href="#" className="hover:text-blue-400 transition-colors">Política de Privacidade</a>
+              <span className="text-white/20">•</span>
+              <a href="#" className="hover:text-blue-400 transition-colors">Termos de Uso</a>
             </div>
           </div>
         </div>
