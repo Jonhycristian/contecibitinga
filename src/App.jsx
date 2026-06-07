@@ -147,10 +147,10 @@ export default function App() {
       {/* HEADER NAVBAR */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md py-4 shadow-md' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <a href="#" className="flex items-center gap-3">
-            <img src={logo2} alt="CONTEC Símbolo" className="h-8 md:h-10 w-auto object-contain" />
-            <span className="font-black text-2xl tracking-wider text-slate-800">CONTEC</span>
-          </a>
+          <div className="flex items-center gap-2 md:gap-4">
+            <img src={logo1} alt="CONTEC Logo" className="h-6 md:h-10 w-auto object-contain" />
+            <img src={logo2} alt="CONTEC Logo 2" className="h-5 md:h-8 w-auto object-contain mt-1 md:mt-2" />
+          </div>
 
           <div className="hidden md:flex items-center gap-6">
             <a href="#servicos" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Serviços</a>
@@ -586,7 +586,7 @@ export default function App() {
       {/* 8. CTA FINAL */}
       <section className="relative py-32 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/foto.jpeg" alt="Equipe CONTEC" loading="lazy" className="w-full h-full object-cover opacity-90 scale-105" />
+          <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-90 scale-105" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/20 to-slate-900/40" />
         </div>
         <div className="relative z-20 max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
@@ -616,10 +616,10 @@ export default function App() {
             {/* Logo & Info */}
             <div className="lg:col-span-1">
               <div className="bg-white p-8 rounded-2xl mb-8 flex justify-center items-center shadow-sm">
-                <a href="#" className="flex items-center gap-3">
-                  <img src={logo2} alt="CONTEC Símbolo" className="h-8 w-auto object-contain" />
-                  <span className="font-black text-xl tracking-wider text-slate-800">CONTEC</span>
-                </a>
+                <div className="flex flex-col items-center gap-2">
+                  <img src={logo1} alt="CONTEC Logo" className="h-8 w-auto object-contain" />
+                  <img src={logo2} alt="CONTEC Logo 2" className="h-6 w-auto object-contain" />
+                </div>
               </div>
               <p className="text-sm leading-relaxed mb-8 text-slate-400 font-light">
                 Consultoria estratégica e inteligência contábil para negócios que buscam crescimento sólido e regularidade impecável em todo o território nacional.
