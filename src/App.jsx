@@ -78,6 +78,7 @@ export default function App() {
 
   const [scrolled, setScrolled] = useState(false);
   const [activeFaq, setActiveFaq] = useState(0);
+  const [selectedService, setSelectedService] = useState(null);
 
   const faqs = [
     { q: "Vocês atendem apenas construtoras e loteadoras?", a: "Não. Embora sejamos altamente especializados no setor imobiliário e de construção civil, nossa equipe possui expertise para atender empresas prestadoras de serviços, comércios e indústrias de diversos portes." },
@@ -280,27 +281,79 @@ export default function App() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {servicesData.map((service, idx) => (
-              <motion.div key={idx} variants={fadeUp} className="bg-slate-50 border border-slate-100 p-8 rounded-3xl hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full">
+              <motion.div 
+                key={idx} 
+                variants={fadeUp} 
+                className="bg-slate-50 border border-slate-100 p-8 rounded-3xl hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full cursor-pointer"
+                onClick={() => setSelectedService(service)}
+              >
                 <div className="w-14 h-14 bg-white border border-slate-200 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors shadow-sm">
                   {service.icon}
                 </div>
                 <h4 className="text-2xl font-bold text-slate-900 mb-3">{service.title}</h4>
                 <p className="text-slate-600 leading-relaxed font-light mb-8 flex-grow">{service.desc}</p>
-                
-                {service.bullets && (
-                  <ul className="space-y-3 mt-auto border-t border-slate-200 pt-6">
-                    {service.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                        <CheckCircle2 className="text-blue-500 mt-0.5 flex-shrink-0" size={18} />
-                        <span className="leading-tight">{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <div className="mt-auto border-t border-slate-200 pt-6 flex items-center text-blue-600 font-bold group-hover:text-blue-700">
+                  Ver Detalhes <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
+
+        {/* SERVICE MODAL */}
+        <AnimatePresence>
+          {selectedService && (
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              exit={{ opacity: 0 }} 
+              className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm"
+              onClick={() => setSelectedService(null)}
+            >
+              <motion.div 
+                initial={{ scale: 0.95, opacity: 0, y: 20 }} 
+                animate={{ scale: 1, opacity: 1, y: 0 }} 
+                exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden relative border border-slate-100"
+              >
+                <button 
+                  onClick={() => setSelectedService(null)}
+                  className="absolute top-6 right-6 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 hover:bg-red-50 hover:text-red-500 transition-colors z-10"
+                >
+                  <X size={20} />
+                </button>
+                <div className="p-8 md:p-12">
+                  <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 border border-blue-100">
+                    {selectedService.icon}
+                  </div>
+                  <h3 className="text-3xl font-bold text-slate-900 mb-4">{selectedService.title}</h3>
+                  <p className="text-lg text-slate-600 mb-8 font-light leading-relaxed">{selectedService.desc}</p>
+                  
+                  {selectedService.bullets && (
+                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                      <h4 className="font-bold text-slate-900 mb-4 uppercase tracking-widest text-sm">O que está incluso:</h4>
+                      <ul className="space-y-4">
+                        {selectedService.bullets.map((bullet, i) => (
+                          <li key={i} className="flex items-start gap-3 text-slate-700 font-medium">
+                            <CheckCircle2 className="text-blue-500 mt-0.5 flex-shrink-0" size={20} />
+                            <span className="leading-relaxed">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  <div className="mt-8">
+                    <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold transition-colors hover:bg-blue-700">
+                      <FaWhatsapp size={20} /> Contratar Serviço
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* 4. NOSSO MÉTODO SECTION (TIMELINE) */}
@@ -412,6 +465,52 @@ export default function App() {
         </div>
       </section>
 
+      {/* 6. DEPOIMENTOS */}
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">O que dizem sobre nós</h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Confiança Comprovada</h3>
+            <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto">Nossa maior conquista é a tranquilidade e o crescimento sólido dos nossos clientes.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative">
+              <div className="text-blue-400 mb-4 text-5xl font-serif leading-none opacity-50">"</div>
+              <p className="text-slate-600 mb-6 font-light leading-relaxed">A CONTEC não é apenas uma contabilidade, é uma parceira estratégica. A consultoria deles no processo do Geric da Caixa foi fundamental para a aprovação do nosso financiamento de obra em tempo recorde.</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 font-bold text-lg"><Building2 size={20}/></div>
+                <div>
+                  <h4 className="font-bold text-slate-900">Construtora Ávila</h4>
+                  <p className="text-sm text-slate-500">Engenharia e Incorporações</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative">
+              <div className="text-blue-400 mb-4 text-5xl font-serif leading-none opacity-50">"</div>
+              <p className="text-slate-600 mb-6 font-light leading-relaxed">Estávamos pagando impostos a mais por enquadramento errado. A auditoria tributária da equipe reestruturou toda a nossa carga fiscal, gerando uma economia imediata impressionante. Serviço premium.</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 font-bold text-lg"><Users size={20}/></div>
+                <div>
+                  <h4 className="font-bold text-slate-900">Grupo Silva Loteamentos</h4>
+                  <p className="text-sm text-slate-500">Desenvolvimento Urbano</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative">
+              <div className="text-blue-400 mb-4 text-5xl font-serif leading-none opacity-50">"</div>
+              <p className="text-slate-600 mb-6 font-light leading-relaxed">Transferir minha contabilidade para a CONTEC foi a melhor decisão do ano. Processo transparente, atendimento 100% digital via WhatsApp muito rápido, e sempre têm a resposta certa na ponta da língua.</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 font-bold text-lg"><Map size={20}/></div>
+                <div>
+                  <h4 className="font-bold text-slate-900">Rodrigues Imobiliária</h4>
+                  <p className="text-sm text-slate-500">Vendas e Locação</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* 8. CTA FINAL */}
       <section className="relative py-32 bg-blue-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -435,6 +534,21 @@ export default function App() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* MAPA INTERATIVO */}
+      <section className="bg-white">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118437.19702657805!2d-48.918987349999996!3d-21.75168015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8ac3e6eab5d3d%3A0x63cd2e3d550e588!2sIbitinga%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1717726589308!5m2!1spt-BR!2sbr" 
+          width="100%" 
+          height="400" 
+          style={{ border: 0 }} 
+          allowFullScreen="" 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Localização CONTEC Ibitinga"
+          className="grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+        ></iframe>
       </section>
 
       {/* FOOTER */}
@@ -498,15 +612,13 @@ export default function App() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-10 flex flex-col items-center justify-center gap-5 text-center text-sm text-slate-500 font-light">
-            <div>
-              <p className="text-slate-400 font-bold tracking-widest uppercase mb-2">CONTEC SERVIÇOS E CONSULTORIA CONTÁBIL LTDA</p>
-              <p className="text-xs">Todos os direitos reservados &copy; {new Date().getFullYear()}</p>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-widest">
-              <a href="#" className="hover:text-blue-400 transition-colors">Política de Privacidade</a>
-              <span className="text-white/20">•</span>
-              <a href="#" className="hover:text-blue-400 transition-colors">Termos de Uso</a>
+          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm font-light">
+            <p>CONTEC SERVIÇOS E CONSULTORIA CONTÁBIL LTDA</p>
+            <p>Todos os direitos reservados &copy; 2026</p>
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+              <span>&bull;</span>
+              <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
             </div>
           </div>
         </div>
@@ -516,9 +628,11 @@ export default function App() {
       <a 
         href="https://wa.me/5516997181970" 
         target="_blank" rel="noreferrer"
-        className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-[0_10px_30px_-10px_rgba(34,197,94,0.8)] hover:scale-110 hover:-translate-y-1 transition-all z-50 flex items-center justify-center border border-green-400/50"
+        className="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 group flex items-center justify-center"
+        aria-label="Falar pelo WhatsApp"
       >
-        <FaWhatsapp size={28} />
+        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
+        <FaWhatsapp size={32} className="relative z-10" />
       </a>
 
     </div>
