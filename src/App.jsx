@@ -445,22 +445,34 @@ export default function App() {
 
       {/* 5. FAQ SECTION */}
       <section id="faq" className="py-32 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">Tire suas dúvidas</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Perguntas Frequentes</h3>
-            <p className="text-lg text-slate-600 font-light">Respostas claras para as dúvidas mais comuns sobre nossos serviços de contabilidade e consultoria.</p>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            {faqs.map((faq, idx) => (
-              <FAQItem 
-                key={idx}
-                question={faq.q}
-                answer={faq.a}
-                isOpen={activeFaq === idx}
-                onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
-              />
-            ))}
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            
+            {/* Esquerda: Textos Fixos */}
+            <div className="lg:w-1/3">
+              <div className="sticky top-32">
+                <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">Tire suas dúvidas</h2>
+                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Perguntas Frequentes</h3>
+                <p className="text-lg text-slate-600 font-light mb-8">Respostas diretas e transparentes para as dúvidas mais comuns sobre os nossos serviços. Sua dúvida não está aqui?</p>
+                <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-slate-50 text-slate-800 border border-slate-200 px-6 py-4 rounded-xl font-bold transition-all hover:bg-slate-100 hover:border-slate-300">
+                  <FaWhatsapp className="text-blue-600" size={20} /> Fale com um Consultor
+                </a>
+              </div>
+            </div>
+
+            {/* Direita: Acordeão */}
+            <div className="lg:w-2/3">
+              {faqs.map((faq, idx) => (
+                <FAQItem 
+                  key={idx}
+                  question={faq.q}
+                  answer={faq.a}
+                  isOpen={activeFaq === idx}
+                  onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+                />
+              ))}
+            </div>
+
           </div>
         </div>
       </section>
