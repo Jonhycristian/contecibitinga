@@ -409,9 +409,11 @@ export default function App() {
             
             {/* Logo & Info */}
             <div className="lg:col-span-1">
-              <div className="flex flex-wrap items-center gap-3 mb-8 bg-white/5 p-5 rounded-2xl border border-white/10">
-                <img src={logo1} alt="CONTEC Logo" className="h-7 md:h-10 w-auto object-contain brightness-0 invert" />
-                <img src={logo2} alt="CONTEC Logo 2" className="h-7 md:h-10 w-auto object-contain brightness-0 invert" />
+              <div className="bg-white p-8 rounded-2xl mb-8 flex justify-center items-center shadow-sm">
+                <div className="flex items-center gap-4">
+                  <img src={logo1} alt="CONTEC Logo" className="h-10 w-auto object-contain" />
+                  <img src={logo2} alt="CONTEC Logo 2" className="h-10 w-auto object-contain" />
+                </div>
               </div>
               <p className="text-sm leading-relaxed mb-8 text-slate-400 font-light">
                 Consultoria estratégica e inteligência contábil para negócios que buscam crescimento sólido e regularidade impecável em todo o território nacional.
