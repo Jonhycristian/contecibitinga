@@ -10,7 +10,6 @@ import logo1 from './assets/logo.png';
 import logo2 from './assets/logo02.png';
 import heroImage from './assets/hero.png';
 import hero02Image from './assets/hero02.png';
-import heroMobileImage from './assets/hero-mobile.png';
 import heroMetodoImage from './assets/hero-metodo.jpeg';
 import heroEspecialistasImage from './assets/hero-especialistas.jpeg';
 
@@ -192,14 +191,11 @@ export default function App() {
       <section className="relative pt-20 pb-56 md:pt-24 md:pb-72 lg:pt-28 lg:pb-80 bg-slate-50 overflow-hidden flex flex-col justify-center">
         {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
-          <picture>
-            <source media="(max-width: 767px)" srcSet={heroMobileImage} />
-            <img 
-              src={hero02Image} 
-              alt="Construção Civil e Loteamentos" 
-              className="w-full h-full object-cover opacity-80 mix-blend-luminosity scale-105"
-            />
-          </picture>
+          <img 
+            src={hero02Image} 
+            alt="Construção Civil e Loteamentos" 
+            className="w-full h-full object-cover object-center opacity-80 mix-blend-luminosity scale-105"
+          />
           {/* Gradiente complexo para legibilidade */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent w-full md:w-2/3" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-slate-50/80 md:via-transparent to-slate-50/30" />
