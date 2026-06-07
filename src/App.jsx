@@ -159,7 +159,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* 1. HERO & STATS SECTION */}
-      <section className="relative min-h-[100svh] flex flex-col bg-slate-50 overflow-hidden pt-28 pb-12 md:justify-center md:pt-32 md:pb-16">
+      <section className="relative min-h-[100svh] flex flex-col bg-slate-50 overflow-hidden pt-24 pb-6 md:pt-32 md:pb-16">
         <div className="absolute inset-0 z-0">
           <picture>
             <source media="(max-width: 767px)" srcSet={hero02Image} />
@@ -174,7 +174,7 @@ export default function App() {
         </div>
         
         {/* MAIN HERO CONTENT */}
-        <div className="container relative z-10 mx-auto px-4 md:px-6 text-center max-w-5xl mb-6 lg:mb-16">
+        <div className="container relative z-10 mx-auto px-4 md:px-6 text-center max-w-5xl flex-1 flex flex-col justify-center mb-6 lg:mb-16">
           <motion.div 
             initial="hidden" animate="visible" variants={staggerContainer}
             className="flex flex-col items-center"
