@@ -11,6 +11,7 @@ import logo2 from './assets/logo02.png';
 import heroImage from './assets/hero.png';
 import hero02Image from './assets/hero02.png';
 import heroMetodoImage from './assets/hero-metodo.jpeg';
+import heroEspecialistasImage from './assets/hero-especialistas.jpeg';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -414,7 +415,7 @@ export default function App() {
       {/* 8. CTA FINAL */}
       <section className="relative py-32 bg-blue-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1541888086925-0c13bb104746?auto=format&fit=crop&w=1920&q=70" alt="Empreendimento" loading="lazy" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
+          <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/90 to-blue-800/80" />
         </div>
         <div className="relative z-20 max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
