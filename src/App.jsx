@@ -163,9 +163,9 @@ export default function App() {
             src={heroImage} 
             alt="Contec Consulting" 
             fetchPriority="high"
-            className="w-full h-full object-cover opacity-20 scale-105"
+            className="w-full h-full object-cover opacity-80 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-slate-50/90 to-white" />
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]" />
         </div>
         
         {/* MAIN HERO CONTENT */}
