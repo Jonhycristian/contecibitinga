@@ -247,7 +247,7 @@ export default function App() {
         </div>
 
         {/* INTEGRATED STATS */}
-        <div className="container relative z-10 mx-auto px-4 md:px-6">
+        <div className="container relative z-10 mx-auto px-4 md:px-6 mt-20 md:mt-32 lg:mt-40">
           <motion.div 
             initial="hidden" animate="visible" variants={staggerContainer}
             className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6"
@@ -589,7 +589,7 @@ export default function App() {
           <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-90 scale-105" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/20 to-slate-900/40" />
         </div>
-        <div className="relative z-20 max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
+        <div className="relative z-20 -mt-4 md:-mt-6 max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
           <span className="inline-block py-1.5 px-4 rounded-full bg-blue-500/20 text-blue-200 text-sm font-bold uppercase tracking-widest mb-6">Fale com Especialistas</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
             Transforme a contabilidade em <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Vantagem Competitiva</span>
