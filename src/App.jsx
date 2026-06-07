@@ -184,7 +184,36 @@ export default function App() {
         </div>
       </section>
 
-      {/* 2. SERVIÇOS DETALHADOS SECTION */}
+      {/* 2. STATS SECTION */}
+      <section className="relative z-20 -mt-16 md:-mt-24 px-6 mb-16 md:mb-24">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+          >
+            {[
+              { number: '15+', label: 'Anos de Experiência' },
+              { number: '500+', label: 'Clientes Satisfeitos' },
+              { number: '100%', label: 'Conformidade Fiscal' },
+              { number: '24/7', label: 'Suporte Estratégico' }
+            ].map((stat, idx) => (
+              <motion.div 
+                key={idx} 
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8, y: 30 },
+                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12 } }
+                }}
+                className="bg-white rounded-3xl p-8 shadow-xl shadow-blue-900/5 border border-slate-100 flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300"
+              >
+                <h3 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-cyan-400 mb-3 drop-shadow-sm">{stat.number}</h3>
+                <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 3. SERVIÇOS DETALHADOS SECTION */}
       <section id="servicos" className="py-32 bg-white relative">
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
