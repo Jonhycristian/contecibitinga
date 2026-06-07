@@ -155,8 +155,8 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* 1. HERO SECTION */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center bg-slate-50 overflow-hidden pt-32 pb-32 md:pb-48">
+      {/* 1. HERO & STATS SECTION */}
+      <section className="relative min-h-[100svh] flex flex-col justify-center bg-slate-50 overflow-hidden pt-32 pb-16">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=70" 
@@ -167,7 +167,8 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-slate-50/80 to-white" />
         </div>
         
-        <div className="container relative z-10 mx-auto px-6 text-center max-w-5xl">
+        {/* MAIN HERO CONTENT */}
+        <div className="container relative z-10 mx-auto px-6 text-center max-w-5xl mb-12 lg:mb-16">
           <motion.div 
             initial="hidden" animate="visible" variants={staggerContainer}
             className="flex flex-col items-center"
@@ -180,17 +181,17 @@ export default function App() {
               Excelência e Tradição Contábil
             </motion.div>
 
-            <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-slate-900 tracking-tight leading-[1.05] mb-8">
+            <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.05] mb-6">
               Estruture o futuro do seu negócio com <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">segurança.</span>
             </motion.h1>
             
-            <motion.p variants={fadeUp} className="text-lg md:text-2xl text-slate-600 mb-12 max-w-3xl leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl leading-relaxed font-light">
               Soluções contábeis, fiscais e documentais premium para construção civil, incorporações, loteamentos e empresas de todos os portes.
             </motion.p>
             
             <motion.div 
               variants={fadeUp}
-              className="flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto"
             >
               <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="group relative bg-blue-600 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/20">
                 <span>Agendar Consultoria</span>
@@ -202,14 +203,12 @@ export default function App() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
 
-      {/* 2. STATS SECTION */}
-      <section className="relative z-20 -mt-16 md:-mt-24 px-6 mb-16 md:mb-24">
-        <div className="container mx-auto max-w-6xl">
+        {/* INTEGRATED STATS */}
+        <div className="container relative z-10 mx-auto px-6">
           <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+            initial="hidden" animate="visible" variants={staggerContainer}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
           >
             {[
               { number: 15, suffix: '+', label: 'Anos de Experiência' },
@@ -220,15 +219,15 @@ export default function App() {
               <motion.div 
                 key={idx} 
                 variants={{
-                  hidden: { opacity: 0, scale: 0.8, y: 30 },
-                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12 } }
+                  hidden: { opacity: 0, scale: 0.8, y: 20 },
+                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12, delay: 0.5 + (idx * 0.1) } }
                 }}
-                className="bg-white rounded-3xl p-8 shadow-xl shadow-blue-900/5 border border-slate-100 flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300"
+                className="bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-lg shadow-blue-900/5 border border-white flex flex-col items-center justify-center text-center hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-300"
               >
-                <h3 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-cyan-400 mb-3 drop-shadow-sm">
+                <h3 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-700 to-cyan-500 mb-2 drop-shadow-sm">
                   {stat.number !== null ? <AnimatedCounter value={stat.number} suffix={stat.suffix} /> : stat.text}
                 </h3>
-                <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
+                <p className="text-xs font-bold text-slate-600 uppercase tracking-widest">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
