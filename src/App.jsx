@@ -284,16 +284,22 @@ export default function App() {
               <motion.div 
                 key={idx} 
                 variants={fadeUp} 
-                className="bg-slate-50 border border-slate-100 p-8 rounded-3xl hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full cursor-pointer"
+                className="relative z-10 bg-white border border-slate-100 p-8 lg:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(37,99,235,0.1)] hover:-translate-y-2 transition-all duration-500 group flex flex-col h-full cursor-pointer overflow-hidden"
                 onClick={() => setSelectedService(service)}
               >
-                <div className="w-14 h-14 bg-white border border-slate-200 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors shadow-sm">
+                {/* Efeito de Gradiente Invisível (Revelado no Hover) */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                
+                <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all duration-500 border border-blue-100 group-hover:border-blue-500">
                   {service.icon}
                 </div>
-                <h4 className="text-2xl font-bold text-slate-900 mb-3">{service.title}</h4>
+                <h4 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">{service.title}</h4>
                 <p className="text-slate-600 leading-relaxed font-light mb-8 flex-grow">{service.desc}</p>
-                <div className="mt-auto border-t border-slate-200 pt-6 flex items-center text-blue-600 font-bold group-hover:text-blue-700">
-                  Ver Detalhes <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <div className="mt-auto pt-6 flex items-center text-blue-600 font-bold group-hover:text-blue-700 border-t border-slate-100">
+                  <span className="relative overflow-hidden flex items-center">
+                    Ver Detalhes 
+                    <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                  </span>
                 </div>
               </motion.div>
             ))}
