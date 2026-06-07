@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate, useScroll, useSpring } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 import { 
   Building2, Calculator, Users, FileText, Map, Landmark,
@@ -68,6 +68,13 @@ const AnimatedCounter = ({ value, suffix }) => {
 };
 
 export default function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const [scrolled, setScrolled] = useState(false);
   const [activeFaq, setActiveFaq] = useState(0);
 
@@ -128,6 +135,12 @@ export default function App() {
   return (
     <div className="font-sans text-slate-800 bg-slate-50 overflow-x-hidden selection:bg-blue-500 selection:text-white">
       
+      {/* SCROLL PROGRESS BAR */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-1 md:h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 origin-left z-[100] shadow-[0_0_10px_rgba(37,99,235,0.5)]" 
+        style={{ scaleX }} 
+      />
+
       {/* HEADER NAVBAR */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm border-b border-slate-200' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
