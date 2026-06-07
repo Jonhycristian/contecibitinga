@@ -224,7 +224,10 @@ export default function App() {
               Soluções contábeis, fiscais e documentais premium para construção civil, incorporações, loteamentos e empresas de todos os portes.
             </motion.p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-16 justify-center">
+            <motion.div 
+              variants={fadeUp}
+              className="flex flex-col sm:flex-row gap-4 mb-16 justify-center w-full sm:w-auto"
+            >
               <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="group relative bg-blue-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:bg-blue-700 shadow-lg shadow-blue-600/20">
                 <span className="relative z-10 flex items-center gap-2">Agendar Consultoria <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></span>
                 <div className="absolute inset-0 h-full w-0 bg-white/20 transition-all duration-300 ease-out group-hover:w-full z-0"></div>
@@ -232,7 +235,7 @@ export default function App() {
               <a href="#servicos" className="px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-slate-700 bg-white/90 border border-slate-200 hover:bg-white transition-colors flex items-center justify-center">
                 Explorar Serviços
               </a>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 
