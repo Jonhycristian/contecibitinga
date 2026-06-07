@@ -151,13 +151,13 @@ export default function App() {
             <img src={logo2} alt="CONTEC Logo 2" className="h-6 md:h-10 w-auto object-contain" />
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <a href="#servicos" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Serviços</a>
             <a href="#metodo" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Método</a>
             <a href="#sobre" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Quem Somos</a>
             <a href="#faq" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">FAQ</a>
-            <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="text-sm font-bold bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all">
-              Fale Conosco
+            <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="text-sm font-bold bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all">
+              Falar com Especialista
             </a>
           </div>
 
@@ -178,9 +178,11 @@ export default function App() {
             <a href="#metodo" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">Método</a>
             <a href="#sobre" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">Quem Somos</a>
             <a href="#faq" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">FAQ</a>
-            <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="mt-4 bg-blue-600 text-white text-center py-4 rounded-xl font-bold text-lg">
-              Fale Conosco Agora
-            </a>
+            <div className="flex flex-col gap-4 mt-8">
+              <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="mt-4 bg-blue-600 text-white text-center py-4 rounded-full font-bold text-lg">
+                Falar com Especialista
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -222,18 +224,15 @@ export default function App() {
               Soluções contábeis, fiscais e documentais premium para construção civil, incorporações, loteamentos e empresas de todos os portes.
             </motion.p>
             
-            <motion.div 
-              variants={fadeUp}
-              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center w-full sm:w-auto"
-            >
-              <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="group relative bg-blue-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:bg-blue-700 shadow-lg shadow-blue-600/20">
-                <span>Agendar Consultoria</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-4 mb-16 justify-center">
+              <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="group relative bg-blue-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:bg-blue-700 shadow-lg shadow-blue-600/20">
+                <span className="relative z-10 flex items-center gap-2">Agendar Consultoria <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></span>
+                <div className="absolute inset-0 h-full w-0 bg-white/20 transition-all duration-300 ease-out group-hover:w-full z-0"></div>
               </a>
-              <a href="#servicos" className="px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-slate-700 bg-white/90 border border-slate-200 hover:bg-white transition-colors flex items-center justify-center">
+              <a href="#servicos" className="px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-slate-700 bg-white/90 border border-slate-200 hover:bg-white transition-colors flex items-center justify-center">
                 Explorar Serviços
               </a>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
 
@@ -351,7 +350,7 @@ export default function App() {
                   )}
                   
                   <div className="mt-8">
-                    <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold transition-colors hover:bg-blue-700">
+                    <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-colors hover:bg-blue-700">
                       <FaWhatsapp size={20} /> Contratar Serviço
                     </a>
                   </div>
@@ -409,7 +408,7 @@ export default function App() {
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                   <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=70" alt="Equipe Contec" loading="lazy" className="w-full h-full object-cover" />
                 </div>
-                <div className="absolute -bottom-8 -right-8 bg-white border border-slate-100 shadow-xl text-slate-800 p-8 rounded-3xl hidden md:block">
+                <div className="absolute -bottom-8 -right-8 bg-white border border-slate-100 shadow-xl text-slate-800 p-8 rounded-full hidden md:block">
                   <div className="text-blue-500 mb-2"><Star size={32} fill="currentColor" /></div>
                   <p className="text-2xl font-bold text-slate-900">Alto Padrão</p>
                   <p className="text-slate-500 text-sm">Em cada detalhe</p>
@@ -460,7 +459,7 @@ export default function App() {
                 <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">Tire suas dúvidas</h2>
                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Perguntas Frequentes</h3>
                 <p className="text-lg text-slate-600 font-light mb-8">Respostas diretas e transparentes para as dúvidas mais comuns sobre os nossos serviços. Sua dúvida não está aqui?</p>
-                <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-slate-50 text-slate-800 border border-slate-200 px-6 py-4 rounded-xl font-bold transition-all hover:bg-slate-100 hover:border-slate-300">
+                <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-slate-50 text-slate-800 border border-slate-200 px-6 py-4 rounded-full font-bold transition-all hover:bg-slate-100 hover:border-slate-300">
                   <FaWhatsapp className="text-blue-600" size={20} /> Fale com um Consultor
                 </a>
               </div>
@@ -540,14 +539,12 @@ export default function App() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
             Transforme a contabilidade em <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Vantagem Competitiva</span>
           </h2>
-          <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-            Pare de perder tempo com burocracias. Deixe a nossa equipe cuidar da conformidade e da saúde financeira do seu negócio enquanto você foca exclusivamente no que importa: crescer.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 bg-white text-blue-700 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-slate-50 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.4)] hover:-translate-y-1">
-              <FaWhatsapp size={24} /> Falar com Consultor
+          <p className="text-lg text-blue-100/80 max-w-2xl mx-auto mb-10 font-light">Pare de perder tempo com burocracias. Deixe a nossa equipe cuidar da conformidade e da saúde financeira do seu negócio enquanto você foca exclusivamente no que importa: <strong className="text-white font-bold">crescer</strong>.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg transition-all hover:bg-slate-50 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.4)] hover:-translate-y-1">
+              Falar com Consultor
             </a>
-            <a href="#servicos" className="inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-white/10">
+            <a href="#servicos" className="inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg transition-all hover:bg-white/10">
               Conhecer Serviços
             </a>
           </div>
@@ -608,8 +605,8 @@ export default function App() {
             <div>
               <h4 className="text-white font-bold mb-8 tracking-wide text-lg">Redes Sociais</h4>
               <p className="text-sm text-slate-400 mb-6 font-light leading-relaxed">Em breve estaremos nas principais redes sociais produzindo conteúdo para você. Por enquanto, fale conosco pelo WhatsApp!</p>
-              <div className="flex space-x-3">
-                  <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="h-12 px-6 bg-blue-600 border border-blue-500 rounded-xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all text-sm font-bold gap-3 text-white shadow-lg shadow-blue-600/20">
+              <div className="flex space-x-3 mt-2">
+                  <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="h-12 px-6 bg-blue-600 border border-blue-500 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all text-sm font-bold gap-3 text-white shadow-lg shadow-blue-600/20">
                     <FaWhatsapp size={20} /> Chamar no WhatsApp
                   </a>
               </div>
