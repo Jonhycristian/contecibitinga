@@ -153,10 +153,10 @@ export default function App() {
           </div>
 
           <div className="hidden md:flex items-center gap-6">
-            <a href="#servicos" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Serviços</a>
-            <a href="#metodo" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Método</a>
-            <a href="#sobre" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Quem Somos</a>
-            <a href="#faq" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">FAQ</a>
+            <a href="#servicos" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">Serviços</a>
+            <a href="#metodo" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">Método</a>
+            <a href="#sobre" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">Quem Somos</a>
+            <a href="#faq" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">FAQ</a>
             <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="text-sm font-bold bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all">
               Falar com Especialista
             </a>
