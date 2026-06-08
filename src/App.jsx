@@ -187,7 +187,7 @@ export default function App() {
         {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
           <div 
-            className="w-full h-full bg-cover bg-center bg-fixed opacity-80 mix-blend-luminosity scale-105"
+            className="w-full h-full bg-cover bg-center md:bg-fixed opacity-80 mix-blend-luminosity scale-105"
             style={{ backgroundImage: `url(${hero02Image})` }}
           />
           {/* Gradiente complexo para legibilidade */}
@@ -374,7 +374,7 @@ export default function App() {
       <section id="metodo" className="py-20 md:py-24 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div 
-            className="w-full h-full bg-cover bg-center bg-fixed opacity-20"
+            className="w-full h-full bg-cover bg-center md:bg-fixed opacity-20"
             style={{ backgroundImage: `url(${heroMetodoImage})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-900/95" />
@@ -575,7 +575,7 @@ export default function App() {
       <section className="relative py-20 md:py-24 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div 
-            className="w-full h-full bg-cover bg-center bg-fixed opacity-90 scale-105"
+            className="w-full h-full bg-cover bg-center md:bg-fixed opacity-90 scale-105"
             style={{ backgroundImage: `url(${heroEspecialistasImage})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/20 to-slate-900/40" />
