@@ -146,7 +146,7 @@ export default function App() {
       {/* HEADER NAVBAR */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md py-4 shadow-md' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="flex flex-col items-center justify-center -ml-2">
+          <div className="flex items-center gap-2 md:gap-4">
             <img src={logo1} alt="CONTEC Logo" className="h-8 md:h-10 w-auto object-contain" />
             <img src={logo2} alt="CONTEC Logo 2" className="h-6 md:h-8 w-auto object-contain mt-1 md:mt-2" />
           </div>
@@ -612,9 +612,9 @@ export default function App() {
             {/* Logo & Info */}
             <div className="lg:col-span-1">
               <div className="bg-white p-8 rounded-2xl mb-8 flex justify-center items-center shadow-sm">
-                <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center gap-2">
                   <img src={logo1} alt="CONTEC Logo" className="h-8 w-auto object-contain" />
-                  <img src={logo2} alt="CONTEC Logo 2" className="h-6 w-auto object-contain" />
+                  <img src={logo2} alt="CONTEC Logo 2" className="h-6 w-auto object-contain mt-1" />
                 </div>
               </div>
               <p className="text-sm leading-relaxed mb-8 text-slate-400 font-light">
