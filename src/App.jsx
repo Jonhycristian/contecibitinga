@@ -188,7 +188,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-20 pb-40 md:pt-24 md:pb-56 bg-slate-50 overflow-hidden flex flex-col justify-center">
+      <section className="relative pt-20 pb-16 md:pt-24 md:pb-24 bg-slate-50 overflow-hidden flex flex-col justify-center">
         {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -273,7 +273,7 @@ export default function App() {
       </section>
 
       {/* 3. SERVIÇOS DETALHADOS SECTION */}
-      <section id="servicos" className="py-20 md:py-24 bg-slate-50/50 relative">
+      <section id="servicos" className="pt-12 pb-20 md:pt-16 md:pb-24 bg-slate-50/50 relative">
         <div className="container mx-auto px-6 relative z-10 max-w-7xl">
           <div className="flex flex-col lg:flex-row justify-between items-center text-center lg:items-end lg:text-left mb-12 md:mb-16 gap-8">
             <div className="max-w-3xl flex flex-col items-center lg:items-start">
