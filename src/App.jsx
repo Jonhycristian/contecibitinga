@@ -188,7 +188,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-20 pb-56 md:pt-24 md:pb-72 lg:pt-28 lg:pb-80 bg-slate-50 overflow-hidden flex flex-col justify-center">
+      <section className="relative pt-20 pb-40 md:pt-24 md:pb-56 bg-slate-50 overflow-hidden flex flex-col justify-center">
         {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -273,9 +273,9 @@ export default function App() {
       </section>
 
       {/* 3. SERVIÇOS DETALHADOS SECTION */}
-      <section id="servicos" className="py-32 bg-slate-50/50 relative">
+      <section id="servicos" className="py-20 md:py-24 bg-slate-50/50 relative">
         <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-          <div className="flex flex-col lg:flex-row justify-between items-center text-center lg:items-end lg:text-left mb-20 gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center text-center lg:items-end lg:text-left mb-12 md:mb-16 gap-8">
             <div className="max-w-3xl flex flex-col items-center lg:items-start">
               <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm flex items-center gap-3">
                 <span className="w-10 h-1 bg-blue-600 rounded-full hidden lg:block"></span> O Que Entregamos
@@ -377,7 +377,7 @@ export default function App() {
       </section>
 
       {/* 4. NOSSO MÉTODO SECTION (TIMELINE) */}
-      <section id="metodo" className="py-32 bg-slate-900 relative overflow-hidden">
+      <section id="metodo" className="py-20 md:py-24 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroMetodoImage} 
@@ -388,7 +388,7 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-900/95" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="text-blue-400 font-bold tracking-widest uppercase mb-4 text-sm">Nosso Método</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Como transformamos a contabilidade da sua empresa</h3>
             <p className="text-lg text-slate-400 font-light">Empresas não contratam contabilidade premium por impulso; contratam processo e segurança. Conheça as etapas do nosso trabalho.</p>
@@ -412,7 +412,7 @@ export default function App() {
       </section>
 
       {/* 4. SOBRE SECTION EXPANDIDA */}
-      <section id="sobre" className="py-32 bg-slate-50">
+      <section id="sobre" className="py-20 md:py-24 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div 
@@ -464,7 +464,7 @@ export default function App() {
       </section>
 
       {/* 5. FAQ SECTION */}
-      <section id="faq" className="py-32 bg-white">
+      <section id="faq" className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
             
@@ -498,9 +498,9 @@ export default function App() {
       </section>
 
       {/* 6. DEPOIMENTOS */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-slate-50 relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">O que dizem sobre nós</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Confiança Comprovada</h3>
             <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto">Nossa maior conquista é a tranquilidade e o crescimento sólido dos nossos clientes.</p>
@@ -580,7 +580,7 @@ export default function App() {
       </section>
 
       {/* 8. CTA FINAL */}
-      <section className="relative py-32 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
+      <section className="relative py-20 md:py-24 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-90 scale-105" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/20 to-slate-900/40" />
