@@ -682,10 +682,10 @@ export default function App() {
       <a 
         href="https://wa.me/5516997181970" 
         target="_blank" rel="noreferrer"
-        className="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 group flex items-center justify-center"
+        className={`fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] transition-all duration-500 group flex items-center justify-center ${scrolled ? 'opacity-100 translate-y-0 hover:scale-110 pointer-events-auto' : 'opacity-0 translate-y-10 pointer-events-none'}`}
         aria-label="Falar pelo WhatsApp"
       >
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
+        <span className={`absolute inset-0 rounded-full bg-[#25D366] opacity-75 ${scrolled ? 'animate-ping' : ''}`}></span>
         <FaWhatsapp size={32} className="relative z-10" />
       </a>
 
