@@ -70,11 +70,6 @@ const AnimatedCounter = ({ value, suffix }) => {
 
 export default function App() {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   const [scrolled, setScrolled] = useState(false);
   const [activeFaq, setActiveFaq] = useState(0);
@@ -140,16 +135,16 @@ export default function App() {
       {/* SCROLL PROGRESS BAR */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 md:h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 origin-left z-[100] shadow-[0_0_10px_rgba(37,99,235,0.5)]" 
-        style={{ scaleX }} 
+        style={{ scaleX: scrollYProgress }} 
       />
 
       {/* HEADER NAVBAR */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md py-4 shadow-md' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-2 md:gap-4">
+          <a href="/" className="flex items-center gap-2 md:gap-4 hover:opacity-80 transition-opacity cursor-pointer">
             <img src={logo1} alt="CONTEC Logo" className="h-8 md:h-10 w-auto object-contain" />
             <img src={logo2} alt="CONTEC Logo 2" className="h-6 md:h-8 w-auto object-contain mt-1 md:mt-2" />
-          </div>
+          </a>
 
           <div className="hidden md:flex items-center gap-6">
             <a href="#servicos" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">Serviços</a>
@@ -612,10 +607,10 @@ export default function App() {
             {/* Logo & Info */}
             <div className="lg:col-span-1">
               <div className="bg-white p-8 rounded-2xl mb-8 flex justify-center items-center shadow-sm">
-                <div className="flex items-center gap-2">
+                <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
                   <img src={logo1} alt="CONTEC Logo" className="h-8 w-auto object-contain" />
                   <img src={logo2} alt="CONTEC Logo 2" className="h-6 w-auto object-contain mt-1" />
-                </div>
+                </a>
               </div>
               <p className="text-sm leading-relaxed mb-8 text-slate-400 font-light">
                 Consultoria estratégica e inteligência contábil para negócios que buscam crescimento sólido e regularidade impecável em todo o território nacional.
