@@ -191,10 +191,9 @@ export default function App() {
       <section className="relative pt-20 pb-16 md:pt-24 md:pb-24 bg-slate-50 overflow-hidden flex flex-col justify-center">
         {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={hero02Image} 
-            alt="Construção Civil e Loteamentos" 
-            className="w-full h-full object-cover object-center opacity-80 mix-blend-luminosity scale-105"
+          <div 
+            className="w-full h-full bg-cover bg-center bg-fixed opacity-80 mix-blend-luminosity scale-105"
+            style={{ backgroundImage: `url(${hero02Image})` }}
           />
           {/* Gradiente complexo para legibilidade */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent w-full md:w-2/3" />
@@ -379,11 +378,9 @@ export default function App() {
       {/* 4. NOSSO MÉTODO SECTION (TIMELINE) */}
       <section id="metodo" className="py-20 md:py-24 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroMetodoImage} 
-            alt="Metodologia" 
-            loading="lazy"
-            className="w-full h-full object-cover opacity-20"
+          <div 
+            className="w-full h-full bg-cover bg-center bg-fixed opacity-20"
+            style={{ backgroundImage: `url(${heroMetodoImage})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-900/95" />
         </div>
@@ -582,7 +579,10 @@ export default function App() {
       {/* 8. CTA FINAL */}
       <section className="relative py-20 md:py-24 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroEspecialistasImage} alt="Especialistas CONTEC" loading="lazy" className="w-full h-full object-cover opacity-90 scale-105" />
+          <div 
+            className="w-full h-full bg-cover bg-center bg-fixed opacity-90 scale-105"
+            style={{ backgroundImage: `url(${heroEspecialistasImage})` }}
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/20 to-slate-900/40" />
         </div>
         <div className="relative z-20 -mt-4 md:-mt-6 max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
