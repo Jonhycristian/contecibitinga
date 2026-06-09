@@ -218,7 +218,7 @@ export default function App() {
             </motion.h1>
             
             <motion.p variants={fadeUp} className="text-lg sm:text-xl text-slate-700 mb-10 max-w-3xl leading-relaxed font-light">
-              Soluções contábeis, fiscais e documentais premium para construção civil, incorporações, loteamentos e empresas de todos os portes.
+              Soluções Contábeis, Fiscais, RH e, Documentação imobiliária para Construção Civil, Loteamento e desmembramento, Incorporação imobiliária, consultoria e acompanhamento no processo de GERIC.
             </motion.p>
             
             <motion.div 
@@ -243,7 +243,7 @@ export default function App() {
             className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6"
           >
             {[
-              { number: 15, suffix: '+', label: 'Anos de Experiência' },
+              { number: 37, suffix: '', label: 'Anos de Experiência' },
               { number: 500, suffix: '+', label: 'Clientes Satisfeitos' },
               { number: 100, suffix: '%', label: 'Conformidade Fiscal' },
               { number: null, text: '24/7', label: 'Suporte Estratégico' }
