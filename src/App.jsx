@@ -28,10 +28,10 @@ const staggerContainer = {
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
-    <div className={`mb-4 rounded-2xl overflow-hidden transition-all duration-300 border ${isOpen ? 'bg-white border-blue-200 shadow-xl shadow-blue-900/5' : 'bg-white/50 border-slate-200 hover:border-blue-300 hover:bg-white'}`}>
+    <div className={`mb-4 rounded-2xl overflow-hidden transition-all duration-300 border ${isOpen ? 'bg-blue-50 border-blue-300 shadow-xl shadow-blue-900/10' : 'bg-blue-50/50 border-blue-100 hover:border-blue-300 hover:bg-blue-50'}`}>
       <button onClick={onClick} className="w-full flex justify-between items-center p-6 md:p-8 text-left focus:outline-none">
         <span className={`font-bold text-lg md:text-xl pr-8 transition-colors ${isOpen ? 'text-blue-700' : 'text-slate-800'}`}>{question}</span>
-        <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>
+        <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-blue-200 text-blue-700' : 'bg-white text-blue-500 shadow-sm'}`}>
           <ChevronDown className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} size={20} />
         </div>
       </button>
