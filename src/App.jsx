@@ -189,7 +189,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-20 pb-16 md:pt-24 md:pb-24 bg-slate-50 overflow-hidden flex flex-col justify-center">
+      <section className="relative pt-16 pb-12 md:pt-24 md:pb-24 bg-slate-50 overflow-hidden flex flex-col justify-center">
         {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
           <div 
@@ -204,14 +204,14 @@ export default function App() {
         {/* Overlay decorativo de tecnologia/finanças */}
         <div className="absolute inset-0 z-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-600 via-transparent to-transparent"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 mt-6 md:mt-0">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
             className="max-w-4xl flex flex-col items-center text-center md:items-start md:text-left mx-auto md:mx-0"
           >
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm mb-6 shadow-sm">
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-xs md:text-sm mb-4 md:mb-6 shadow-sm">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
@@ -219,11 +219,11 @@ export default function App() {
               Excelência e Tradição Contábil
             </motion.div>
 
-            <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
+            <motion.h1 variants={fadeUp} className="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-4 md:mb-6">
               Estruture o futuro do seu negócio com <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">segurança.</span>
             </motion.h1>
             
-            <motion.p variants={fadeUp} className="text-lg sm:text-xl text-slate-700 mb-10 max-w-3xl leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-base sm:text-xl text-slate-700 mb-8 md:mb-10 max-w-3xl leading-relaxed font-light">
               Soluções Contábeis, Fiscais, RH e, Documentação imobiliária para Construção Civil, Loteamento e desmembramento, Incorporação imobiliária, consultoria e acompanhamento no processo de GERIC.
             </motion.p>
             
