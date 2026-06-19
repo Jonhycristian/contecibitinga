@@ -597,7 +597,7 @@ export default function App() {
                 <img src="/app.png" alt="Aplicativo CONTEC" className="w-full h-auto object-cover rounded-2xl" />
                 
                 {/* Logo sobreposta */}
-                <div className="absolute top-10 md:top-11 left-1/2 -translate-x-1/2 pointer-events-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
+                <div className="absolute top-6 md:top-8 left-1/2 -translate-x-1/2 pointer-events-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
                   <img src={logo1} alt="Logo CONTEC" className="w-20 h-auto opacity-90" />
                 </div>
               </div>
@@ -729,14 +729,30 @@ export default function App() {
               </ul>
             </div>
 
-            {/* Redes Sociais */}
+            {/* Redes Sociais & App */}
             <div>
-              <h4 className="text-white font-bold mb-8 tracking-wide text-lg">Redes Sociais</h4>
-              <p className="text-sm text-slate-400 mb-6 font-light leading-relaxed">Em breve estaremos nas principais redes sociais produzindo conteúdo para você. Por enquanto, fale conosco pelo WhatsApp!</p>
-              <div className="flex space-x-3 mt-2">
-                  <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="h-12 px-6 bg-blue-600 border border-blue-500 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all text-sm font-bold gap-3 text-white shadow-lg shadow-blue-600/20">
+              <h4 className="text-white font-bold mb-8 tracking-wide text-lg">Conexão & App</h4>
+              <p className="text-sm text-slate-400 mb-6 font-light leading-relaxed">Em breve estaremos nas redes sociais. Por enquanto, fale conosco no WhatsApp ou baixe nosso app oficial.</p>
+              <div className="flex flex-col gap-3 mt-2">
+                  <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="w-fit h-12 px-6 bg-blue-600 border border-blue-500 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all text-sm font-bold gap-3 text-white shadow-lg shadow-blue-600/20">
                     <FaWhatsapp size={20} /> Chamar no WhatsApp
                   </a>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    <a href="#" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-2 rounded-xl transition-all text-white shadow-lg w-fit">
+                      <FaGooglePlay size={20} className="text-white" />
+                      <div className="text-left">
+                        <div className="text-[8px] leading-none text-slate-400 mb-0.5">DISPONÍVEL NO</div>
+                        <div className="text-xs font-semibold leading-tight">Google Play</div>
+                      </div>
+                    </a>
+                    <a href="#" className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-2 rounded-xl transition-all text-white shadow-lg w-fit">
+                      <FaApple size={22} className="text-white" />
+                      <div className="text-left">
+                        <div className="text-[8px] leading-none text-slate-400 mb-0.5">Baixar na</div>
+                        <div className="text-xs font-semibold leading-tight">App Store</div>
+                      </div>
+                    </a>
+                  </div>
               </div>
             </div>
           </div>
