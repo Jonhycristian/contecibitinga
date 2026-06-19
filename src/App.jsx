@@ -189,7 +189,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-16 pb-12 md:pt-24 md:pb-24 bg-slate-50 overflow-hidden flex flex-col justify-center">
+      <section className="relative pt-24 pb-12 md:pt-28 md:pb-24 bg-slate-50 overflow-hidden flex flex-col justify-center">
         {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
           <div 
