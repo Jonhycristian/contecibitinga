@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate, useScroll, useSpring } from 'framer-motion';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaGooglePlay, FaApple } from 'react-icons/fa';
 import { 
   Building2, Calculator, Users, FileText, Map, Landmark,
   CheckCircle2, ChevronRight, ChevronDown, ChevronUp,
@@ -151,6 +151,10 @@ export default function App() {
             <a href="#metodo" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">Método</a>
             <a href="#sobre" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">Quem Somos</a>
             <a href="#faq" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">FAQ</a>
+            <a href="#app" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">App</a>
+            <a href="#" target="_blank" rel="noreferrer" className="text-blue-600 border border-blue-600 px-5 py-2 rounded-full hover:bg-blue-50 font-bold transition-all shadow-sm text-sm">
+              Área do Cliente
+            </a>
             <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="text-sm font-bold bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all">
               Falar com Especialista
             </a>
@@ -173,6 +177,8 @@ export default function App() {
             <a href="#metodo" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">Método</a>
             <a href="#sobre" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">Quem Somos</a>
             <a href="#faq" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">FAQ</a>
+            <a href="#app" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">App</a>
+            <a href="#" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-blue-600 border-b border-slate-100 pb-4">Área do Cliente</a>
             <div className="flex flex-col gap-4 mt-8">
               <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="mt-4 bg-blue-600 text-white text-center py-4 rounded-full font-bold text-lg">
                 Falar com Especialista
@@ -571,6 +577,80 @@ export default function App() {
         </div>
       </section>
 
+      {/* 7. NOSSO APP SECTION */}
+      <section id="app" className="py-24 bg-blue-50 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-400/20 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-0 -left-24 w-96 h-96 bg-cyan-400/20 rounded-full blur-[100px]"></div>
+
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.8 }}
+            className="order-2 lg:order-1 flex justify-center lg:justify-start"
+          >
+            <div className="relative">
+              {/* Imagem do Aplicativo */}
+              <div className="relative w-[280px] md:w-[320px] mx-auto rounded-[2rem] shadow-2xl overflow-hidden border-[8px] border-slate-900 bg-slate-900">
+                <img src="/app.png" alt="Aplicativo CONTEC" className="w-full h-auto object-cover rounded-2xl" />
+                
+                {/* Logo sobreposta */}
+                <div className="absolute top-10 md:top-11 left-1/2 -translate-x-1/2 pointer-events-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
+                  <img src={logo1} alt="Logo CONTEC" className="w-20 h-auto opacity-90" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-1 lg:order-2 text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
+            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 font-bold text-sm mb-6">
+              O Seu Escritório Digital
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+              A contabilidade da sua empresa na <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">palma da mão.</span>
+            </h2>
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              Com o aplicativo oficial da CONTEC, você acompanha suas finanças, acessa guias de impostos, envia documentos e fala com seu contador em tempo real. Tudo isso direto do seu celular, de forma rápida, segura e sem burocracia.
+            </p>
+
+            <ul className="space-y-4 mb-10 text-left w-full max-w-md lg:max-w-none">
+              {['Envio e recebimento de documentos fiscais', 'Acesso rápido a guias e relatórios', 'Atendimento direto com seu contador', 'Notificações importantes de vencimentos'].map((feature, i) => (
+                <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
+                  <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                    <ShieldCheck size={14} />
+                  </div>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-6">
+              <a href="#" target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-black hover:bg-slate-900 hover:scale-105 border border-slate-800 px-4 py-2.5 rounded-xl transition-all text-white shadow-lg w-fit">
+                <FaGooglePlay size={24} className="text-white" />
+                <div className="text-left">
+                  <div className="text-[9px] leading-none text-slate-300 mb-0.5">DISPONÍVEL NO</div>
+                  <div className="text-sm font-semibold leading-tight">Google Play</div>
+                </div>
+              </a>
+              <a href="#" className="flex items-center gap-3 bg-black hover:bg-slate-900 hover:scale-105 border border-slate-800 px-4 py-2.5 rounded-xl transition-all text-white shadow-lg w-fit">
+                <FaApple size={28} className="text-white" />
+                <div className="text-left">
+                  <div className="text-[9px] leading-none text-slate-300 mb-0.5">Baixar na</div>
+                  <div className="text-sm font-semibold leading-tight">App Store</div>
+                </div>
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* 8. CTA FINAL */}
       <section className="relative py-20 md:py-24 bg-slate-900 flex items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -625,6 +705,8 @@ export default function App() {
                 <li><a href="#metodo" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2"><ChevronRight size={16}/> Nosso Método</a></li>
                 <li><a href="#sobre" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2"><ChevronRight size={16}/> Quem Somos</a></li>
                 <li><a href="#faq" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2"><ChevronRight size={16}/> Dúvidas Frequentes</a></li>
+                <li><a href="#app" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2"><ChevronRight size={16}/> Nosso App</a></li>
+                <li><a href="#" target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2 font-bold"><ChevronRight size={16}/> Área do Cliente</a></li>
               </ul>
             </div>
 
