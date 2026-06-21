@@ -78,11 +78,7 @@ Todo o projeto utiliza classes utilitárias do Tailwind para breakpoints (`md`, 
 
 ---
 
-## 👤 Autor
 
-**[Jonhy]**
-- LinkedIn: [Seu LinkedIn]
-- GitHub: [Seu GitHub]
 
 ## 📝 Licença
 
