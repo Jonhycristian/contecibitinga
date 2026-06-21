@@ -15,11 +15,12 @@ Uma landing page premium, interativa e altamente otimizada para o escritório de
 
 ## 💻 Tecnologias Utilizadas
 
-- **Core:** React 19 + Vite
-- **Estilização:** Tailwind CSS (Vanilla)
-- **Animações:** Framer Motion
-- **Ícones:** Lucide React & React Icons
-- **Infra/Deploy:** Netlify (com headers de segurança)
+- **Core:** React (v19.2.6) + React DOM (v19.2.6)
+- **Estilização:** Tailwind CSS (v4.3.0) + PostCSS (v8.5.15)
+- **Animações:** Framer Motion (v12.40.0)
+- **Ícones:** Lucide React (v1.17.0) & React Icons (v5.6.0)
+- **Build e DevTools:** Vite (v8.0.12) & ESLint (v10.3.0)
+- **Infra/Deploy:** Roteamento SPA e cabeçalhos de segurança prontos para Netlify (`netlify.toml`)
 
 ## 🚀 Instalação e Execução
 
