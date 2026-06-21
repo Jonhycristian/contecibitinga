@@ -27,7 +27,7 @@ Siga os passos abaixo para rodar o projeto na sua máquina:
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/contecibitinga.git
+   git clone https://github.com/Jonhycristian/contecibitinga.git
    cd contecibitinga
    ```
 
