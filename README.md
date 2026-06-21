@@ -1,6 +1,7 @@
 # CONTEC - Escritório de Contabilidade e Consultoria
 
-![CONTEC Landing Page Preview](public/site.png)
+![CONTEC Landing Page Preview - Desktop](public/site.png)
+![CONTEC Landing Page Preview - Mobile](public/site-mobile.jpeg)
 
 Uma landing page premium, interativa e altamente otimizada para o escritório de contabilidade CONTEC, especializado no setor de construção civil, incorporações e loteamentos na região de Ibitinga - SP.
 
