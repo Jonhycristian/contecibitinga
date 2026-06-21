@@ -69,14 +69,6 @@ Foi incluído um `netlify.toml` que instrui o navegador a usar políticas severa
 
 Todo o projeto utiliza classes utilitárias do Tailwind para breakpoints (`md`, `lg`, `sm`). Modais, menu hambúrguer e formulários foram testados para oferecer touch-targets adequados em dispositivos móveis.
 
----
-
-### Capturas de Tela 📸
-*Nota para o mantenedor:* Adicione as capturas de tela finais nestes caminhos, substituindo se necessário na pasta de assets:
-- **Desktop View:** `public/app.png`
-- **Mobile View:** `(Requer adição)`
-
----
 
 
 
