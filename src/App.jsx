@@ -129,6 +129,30 @@ export default function App() {
     }
   ];
 
+  const testimonialsData = [
+    {
+      text: "A CONTEC não é apenas uma contabilidade, é uma parceira estratégica. A consultoria deles no processo do Geric da Caixa foi fundamental para a aprovação do nosso financiamento de obra em tempo recorde.",
+      icon: <Building2 size={24}/>,
+      name: "Construtora Ávila",
+      role: "Engenharia e Incorporações",
+      delay: 0
+    },
+    {
+      text: "Estávamos pagando impostos a mais por enquadramento errado. A auditoria tributária da equipe reestruturou toda a nossa carga fiscal, gerando uma economia imediata impressionante. Serviço premium.",
+      icon: <Users size={24}/>,
+      name: "Grupo Silva",
+      role: "Desenvolvimento Urbano",
+      delay: 0.1
+    },
+    {
+      text: "Transferir minha contabilidade para a CONTEC foi a melhor decisão do ano. Processo transparente, atendimento 100% digital via WhatsApp muito rápido, e sempre têm a resposta certa na ponta da língua.",
+      icon: <Map size={24}/>,
+      name: "Rodrigues Imobiliária",
+      role: "Vendas e Locação",
+      delay: 0.2
+    }
+  ];
+
   return (
     <div className="font-sans text-slate-800 bg-slate-50 overflow-x-hidden selection:bg-blue-500 selection:text-white">
       
@@ -160,7 +184,7 @@ export default function App() {
             </a>
           </div>
 
-          <button className="md:hidden text-slate-800" onClick={() => setMenuOpen(!menuOpen)}>
+          <button aria-label={menuOpen ? "Fechar Menu" : "Abrir Menu"} aria-expanded={menuOpen} className="md:hidden text-slate-800" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -338,6 +362,7 @@ export default function App() {
                 className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden relative border border-slate-100"
               >
                 <button 
+                  aria-label="Fechar Detalhes"
                   onClick={() => setSelectedService(null)}
                   className="absolute top-6 right-6 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 hover:bg-red-50 hover:text-red-500 transition-colors z-10"
                 >
@@ -504,75 +529,36 @@ export default function App() {
             <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto">Nossa maior conquista é a tranquilidade e o crescimento sólido dos nossos clientes.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* Depoimento 1 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col h-full relative group hover:-translate-y-2 transition-transform duration-500">
-              <div className="text-blue-500/10 absolute top-8 right-8 text-8xl font-serif leading-none">"</div>
-              <div className="flex gap-1 text-amber-400 mb-6 relative z-10">
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-              </div>
-              <p className="text-slate-700 mb-8 font-medium leading-relaxed flex-grow relative z-10">"A CONTEC não é apenas uma contabilidade, é uma parceira estratégica. A consultoria deles no processo do Geric da Caixa foi fundamental para a aprovação do nosso financiamento de obra em tempo recorde."</p>
-              
-              <div className="flex items-center gap-4 pt-6 border-t border-slate-100 relative z-10 mt-auto">
-                <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
-                  <Building2 size={24}/>
+            {testimonialsData.map((testimonial, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ delay: testimonial.delay }} 
+                className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col h-full relative group hover:-translate-y-2 transition-transform duration-500"
+              >
+                <div className="text-blue-500/10 absolute top-8 right-8 text-8xl font-serif leading-none">"</div>
+                <div className="flex gap-1 text-amber-400 mb-6 relative z-10">
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 tracking-wide">Construtora Ávila</h4>
-                  <p className="text-blue-600 font-bold uppercase tracking-widest text-[10px] mt-1">Engenharia e Incorporações</p>
+                <p className="text-slate-700 mb-8 font-medium leading-relaxed flex-grow relative z-10">"{testimonial.text}"</p>
+                
+                <div className="flex items-center gap-4 pt-6 border-t border-slate-100 relative z-10 mt-auto">
+                  <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                    {testimonial.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 tracking-wide">{testimonial.name}</h4>
+                    <p className="text-blue-600 font-bold uppercase tracking-widest text-[10px] mt-1">{testimonial.role}</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* Depoimento 2 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col h-full relative group hover:-translate-y-2 transition-transform duration-500">
-              <div className="text-blue-500/10 absolute top-8 right-8 text-8xl font-serif leading-none">"</div>
-              <div className="flex gap-1 text-amber-400 mb-6 relative z-10">
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-              </div>
-              <p className="text-slate-700 mb-8 font-medium leading-relaxed flex-grow relative z-10">"Estávamos pagando impostos a mais por enquadramento errado. A auditoria tributária da equipe reestruturou toda a nossa carga fiscal, gerando uma economia imediata impressionante. Serviço premium."</p>
-              
-              <div className="flex items-center gap-4 pt-6 border-t border-slate-100 relative z-10 mt-auto">
-                <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
-                  <Users size={24}/>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 tracking-wide">Grupo Silva</h4>
-                  <p className="text-blue-600 font-bold uppercase tracking-widest text-[10px] mt-1">Desenvolvimento Urbano</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Depoimento 3 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col h-full relative group hover:-translate-y-2 transition-transform duration-500">
-              <div className="text-blue-500/10 absolute top-8 right-8 text-8xl font-serif leading-none">"</div>
-              <div className="flex gap-1 text-amber-400 mb-6 relative z-10">
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-              </div>
-              <p className="text-slate-700 mb-8 font-medium leading-relaxed flex-grow relative z-10">"Transferir minha contabilidade para a CONTEC foi a melhor decisão do ano. Processo transparente, atendimento 100% digital via WhatsApp muito rápido, e sempre têm a resposta certa na ponta da língua."</p>
-              
-              <div className="flex items-center gap-4 pt-6 border-t border-slate-100 relative z-10 mt-auto">
-                <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
-                  <Map size={24}/>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 tracking-wide">Rodrigues Imobiliária</h4>
-                  <p className="text-blue-600 font-bold uppercase tracking-widest text-[10px] mt-1">Vendas e Locação</p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
