@@ -212,7 +212,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-24 pb-12 md:pt-28 md:pb-24 bg-slate-50 overflow-hidden flex flex-col justify-center">
+      <section className="relative min-h-[100dvh] w-full pt-24 pb-12 md:pt-28 md:pb-24 bg-slate-50 overflow-hidden flex flex-col justify-center">
         {/* Imagem de Fundo (nova imagem de loteamento/construção) */}
         <div className="absolute inset-0 z-0">
           <div 
@@ -242,11 +242,11 @@ export default function App() {
               Excelência e Tradição Contábil
             </motion.div>
 
-            <motion.h1 variants={fadeUp} className="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-4 md:mb-6">
+            <motion.h1 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-3 md:mb-4">
               Estruture o futuro do seu negócio com <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">segurança.</span>
             </motion.h1>
             
-            <motion.p variants={fadeUp} className="text-base sm:text-xl text-slate-700 mb-8 md:mb-10 max-w-3xl leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-sm sm:text-lg text-slate-700 mb-6 md:mb-8 max-w-3xl leading-relaxed font-light">
               Soluções Contábeis, Fiscais, RH e, Documentação imobiliária para Construção Civil, Loteamento e desmembramento, Incorporação imobiliária, consultoria e acompanhamento no processo de GERIC.
             </motion.p>
             
@@ -266,7 +266,7 @@ export default function App() {
         </div>
 
         {/* INTEGRATED STATS */}
-        <div className="container relative z-10 mx-auto px-4 md:px-6 mt-8 md:mt-12">
+        <div className="container relative z-10 mx-auto px-4 md:px-6 mt-6 md:mt-8">
           <motion.div 
             initial="hidden" animate="visible" variants={staggerContainer}
             className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6"
