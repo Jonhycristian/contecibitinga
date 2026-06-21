@@ -8,7 +8,6 @@ import {
 } from 'lucide-react';
 import logo1 from './assets/logo.png';
 import logo2 from './assets/logo02.png';
-import heroImage from './assets/hero.png';
 import hero02Image from './assets/hero02.png';
 import heroMetodoImage from './assets/hero-metodo.jpeg';
 import heroEspecialistasImage from './assets/hero-especialistas.jpeg';
