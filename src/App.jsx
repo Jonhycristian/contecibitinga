@@ -617,7 +617,7 @@ export default function App() {
             </ul>
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-6">
-              <a href="#" target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-black hover:bg-slate-900 hover:scale-105 border border-slate-800 px-4 py-2.5 rounded-xl transition-all text-white shadow-lg w-fit">
+              <a href="https://play.google.com/store/apps/details?id=com.conteccontabilidadeibitinga" target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-black hover:bg-slate-900 hover:scale-105 border border-slate-800 px-4 py-2.5 rounded-xl transition-all text-white shadow-lg w-fit">
                 <FaGooglePlay size={24} className="text-white" />
                 <div className="text-left">
                   <div className="text-[9px] leading-none text-slate-300 mb-0.5">DISPONÍVEL NO</div>
@@ -723,7 +723,7 @@ export default function App() {
                     <FaWhatsapp size={20} /> Chamar no WhatsApp
                   </a>
                   <div className="flex flex-wrap gap-2 mt-2">
-                    <a href="#" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-2 rounded-xl transition-all text-white shadow-lg w-fit">
+                    <a href="https://play.google.com/store/apps/details?id=com.conteccontabilidadeibitinga" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-2 rounded-xl transition-all text-white shadow-lg w-fit">
                       <FaGooglePlay size={20} className="text-white" />
                       <div className="text-left">
                         <div className="text-[8px] leading-none text-slate-400 mb-0.5">DISPONÍVEL NO</div>
