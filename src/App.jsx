@@ -175,7 +175,7 @@ export default function App() {
             <a href="#sobre" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">Quem Somos</a>
             <a href="#faq" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">FAQ</a>
             <a href="#app" className="text-sm font-bold text-slate-900 hover:text-blue-700 transition-colors">App</a>
-            <a href="#" target="_blank" rel="noreferrer" className="text-blue-600 border border-blue-600 px-5 py-2 rounded-full hover:bg-blue-50 font-bold transition-all shadow-sm text-sm">
+            <a href="https://vip.acessorias.com/contecconsultoriaecontabilidade" target="_blank" rel="noreferrer" className="text-blue-600 border border-blue-600 px-5 py-2 rounded-full hover:bg-blue-50 font-bold transition-all shadow-sm text-sm">
               Área do Cliente
             </a>
             <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="text-sm font-bold bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all">
@@ -201,7 +201,7 @@ export default function App() {
             <a href="#sobre" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">Quem Somos</a>
             <a href="#faq" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">FAQ</a>
             <a href="#app" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">App</a>
-            <a href="#" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-blue-600 border-b border-slate-100 pb-4">Área do Cliente</a>
+            <a href="https://vip.acessorias.com/contecconsultoriaecontabilidade" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="text-xl font-bold text-blue-600 border-b border-slate-100 pb-4">Área do Cliente</a>
             <div className="flex flex-col gap-4 mt-8">
               <a href="https://wa.me/5516997181970" target="_blank" rel="noreferrer" className="mt-4 bg-blue-600 text-white text-center py-4 rounded-full font-bold text-lg">
                 Falar com Especialista
